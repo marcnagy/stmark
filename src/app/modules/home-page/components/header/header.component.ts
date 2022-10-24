@@ -11,5 +11,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+   Alertmes():number{
+    console.log("OOpsie");
+return 76
+  }
 
 }
