@@ -4,11 +4,13 @@ import { SwiperModule } from 'swiper/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SliderComponent } from './modules/home-page/components/slider/slider.component';
+import { NavBarComponent } from './modules/home-page/components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent
+    SliderComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
