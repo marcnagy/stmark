@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
+Alert(){
+  alert("hey there")
+}
   constructor() { }
 
   ngOnInit(): void {

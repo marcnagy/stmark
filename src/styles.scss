@@ -2,9 +2,14 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import 'swiper/scss';
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
-
-
+.btn1{
+    height: 33px;
+    background-color: #AF0E2C;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid black 0px;
+}
 
 $backround-main-color:white;
 $footer-background-color:#FFF3F0;
