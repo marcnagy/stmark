@@ -14,7 +14,9 @@ import { FooterComponent } from './modules/home-page/components/footer/footer.co
     AppComponent,
     SliderComponent,
     NavBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SliderAnnouncComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
