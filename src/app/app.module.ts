@@ -8,6 +8,7 @@ import { NavBarComponent } from './modules/home-page/components/nav-bar/nav-bar.
 import { HeaderComponent } from './modules/home-page/components/header/header.component';
 import { SliderAnnouncComponent } from './modules/home-page/components/slider-announc/slider-announc.component';
 import { FooterComponent } from './modules/home-page/components/footer/footer.component';
+import { SignInComponent } from './modules/sign-in/components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './modules/home-page/components/footer/footer.co
     NavBarComponent,
     HeaderComponent,
     SliderAnnouncComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
