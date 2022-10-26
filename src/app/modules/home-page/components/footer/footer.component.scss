@@ -6,18 +6,20 @@
 }
 .footer-heads{
     
-    display: flex;
-    margin-left:128px ;
     font-size: 20px;
     margin-bottom: 28px;
 }
 .head-footer{
     margin-right: 225px;
 }
-.footer-links{
-    margin-left:128px ;
-    list-style: none;
-    padding-left: 0;
+.social-list{
+    li{
+        margin: 0 8px;
+    }
+}
+ul{
+  list-style: none;
+  padding-left: 0;
     li{
         margin-bottom: 6px;
         font-size: 16px;
@@ -32,7 +34,25 @@
     
 }
 .copyright{
-    margin-left:128px ;
     font-size: 20px;
 
+    
+}
+footer{
+    margin-left:128px ;
+}
+.icon-facebook{
+    color: #3b5998;
+}
+.icon-instagram{
+    color:#bc2a8d
+}
+.icon-whatsapp{
+    color:#25D366;
+}
+.icon-tumblr{
+    color:#34526f;
+}
+#social-media-footer{
+margin-left:66px
 }
