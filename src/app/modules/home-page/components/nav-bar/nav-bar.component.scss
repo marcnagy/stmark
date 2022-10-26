@@ -1,18 +1,21 @@
 .navbar{
-    
+    width: 100%;
     li{
-        margin: 0 135px;
         font-weight: bold;   
         color: white;
     }
+    
     a{
         text-decoration: none;
-        color: white;
-     
+        color: white;     
+         width: fit-content;
     }
 }
 .navbar-nav{
-    justify-content: center;
+   li{
+    padding-left: 100px;
+    padding-right: 100px;
+   }
 }
 .navbar-expand-lg .navbar-collapse {
     justify-content: center;

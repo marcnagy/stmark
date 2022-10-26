@@ -17,7 +17,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.swiperConfig={
-      centeredSlides:true,
+      slidesPerView:1,
       clickable:true,
       pagination: {
         clickable:true,
