@@ -4,13 +4,17 @@ import { SwiperModule } from 'swiper/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SliderComponent } from './modules/home-page/components/slider/slider.component';
-import { SignInComponentComponent } from './modules/login/components/sign-in-component/sign-in-component.component';
+import { NavBarComponent } from './modules/home-page/components/nav-bar/nav-bar.component';
+import { HeaderComponent } from './modules/home-page/components/header/header.component';
+import { SliderAnnouncComponent } from './modules/home-page/components/slider-announc/slider-announc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SliderComponent,
-    SignInComponentComponent
+    NavBarComponent,
+    HeaderComponent,
+    SliderAnnouncComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,22 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import 'swiper/scss';
 
+.btn1{
+    height: 33px;
+    background-color: #AF0E2C;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid black 0px;
+}
+.Bolded-Text{
+    font-weight: bold;
+}
 
 $backround-main-color:white;
 $footer-background-color:#FFF3F0;
+$imp-reminder-slider-color:#FBF4F4;
 $nav-bar-color:#AF0E2C;
+
+$main-font-weight:bold;
+$main-font-size:20px;
