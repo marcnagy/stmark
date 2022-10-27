@@ -1,13 +1,10 @@
-<p>slider works!</p>
-<swiper
-    [slidesPerView]="1"
-    [spaceBetween]="30"
-    [pagination]="{
-      clickable: true
-    }"
-    class="mySwiper"
-  >
-    <ng-template swiperSlide><img src="assets/pictures/stmark.jpg" ></ng-template>
-    <ng-template swiperSlide><img src="assets/pictures/stmark.jpg" ></ng-template>
-    <ng-template swiperSlide><img src="assets/pictures/stmark.jpg" ></ng-template>
+
+<swiper [config]="swiperConfig" class=" homeslider">
+<ng-template swiperSlide><img src="assets/pictures/sa7n.png" ></ng-template>
+    <ng-template swiperSlide><img src="assets/pictures/sa7n.png" ></ng-template>
+    <ng-template swiperSlide><img src="assets/pictures/sa7n.png" ></ng-template>
   </swiper>
+    <div class="buts"><span class="swiper-buts left-but icon-circle-left"></span>
+    <span class=" right-but swiper-buts icon-circle-right"></span>
+  </div>
+  
