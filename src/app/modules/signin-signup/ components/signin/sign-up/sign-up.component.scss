@@ -21,17 +21,18 @@ margin-bottom: 45px;
     display: grid;
     justify-content: center ;
 }
-.sign-in-element {
 
-}
 .Inputfield{
     height: 59px;
     width: 487px;
     margin-bottom: 60px;
     border-radius: 10px;
     }
-    .Inputfield::placeholder{
-        padding-left: 9px;
+   
+    .Inputfield::content{
+        padding-left: 15px;
+        font-weight: bold;
+
     }
 
 .button-holder{

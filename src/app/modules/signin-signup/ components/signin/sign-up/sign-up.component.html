@@ -5,14 +5,14 @@
             Sign Up 
         </div>
         <div class="input-form ">
-            <input class="Inputfield" id="national-id-inp" type="text" placeholder="national id.">
-            <input class="Inputfield" id="phone-num-inp" type="text" placeholder="phone number">
-            <input class="Inputfield" id="first-name-inp" type="text" placeholder="first name">
-            <input class="Inputfield" id="second-name-inp" type="text" placeholder="second name">
-            <input class="Inputfield" id="adress-inp" type="text" placeholder="adress">
-            <input class="Inputfield" id="email-inp" type="text" placeholder="email">
+            <input #nationalinp class="Inputfield" id="national-id-inp" type="text" placeholder="national id.">
+            <input #phoneinp class="Inputfield" id="phone-num-inp" type="text" placeholder="phone number">
+            <input #firstinp class="Inputfield" id="first-name-inp" type="text" placeholder="first name">
+            <input #secondinp class="Inputfield" id="second-name-inp" type="text" placeholder="second name">
+            <input #adressinp class="Inputfield" id="adress-inp" type="text" placeholder="adress">
+            <input #emailinp class="Inputfield" id="email-inp" type="text" placeholder="email">
         </div>
-        <div class="sign-up button-holder"><button class="sign-up-button btn1">Sign Up</button></div>
+        <div class="sign-up button-holder"><button class="sign-up-button btn1" (click)="GetSignUpdata(adressinp.value,phoneinp.value,firstinp.value,secondinp.value,adressinp.value,emailinp.value)">Sign Up</button></div>
        
     </div>
     <div class="img-conatiner col-md-6">
