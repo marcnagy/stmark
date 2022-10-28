@@ -5,8 +5,12 @@
     padding-bottom: 32px;
     padding-top: 72px;
     background-color: #FBF4F4;
-    width: 949.97px;
+    // width: 1580px;
     border-radius: 35px;
+    display: flex;
+}
+.img-conatiner{
+    background-image:image("assets/pictures/Signup-pic.png");
 }
 .sign-in-header{
     font-size: 32px;
@@ -88,7 +92,9 @@ border-radius: 10px;
     margin: 0%;
     margin-bottom: 48px;
 
-.sign-up-button-holder{
+
+}
+.button-holder{
     display: flex;
     justify-content:center;
     margin-bottom: 123px;
@@ -96,8 +102,5 @@ border-radius: 10px;
     width:244.13px;
     height: 68.04;
    }
-}
-
-
 
 }
