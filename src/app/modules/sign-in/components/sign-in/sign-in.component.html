@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="sign-in-header Bolded-Text">
+    <form action="get">
+
+
+        <div class="sign-in-header Bolded-Text">
             User login 
     </div>
     <div class="sign-in-elements">
@@ -7,19 +10,26 @@
             <div class="sign-in-tips-words Bolded-Text">Please enter your national id and phone number to sign in to St.mark’s website.</div> 
         </div>
         <div class="input-form col-md-12">
-            <input id="national-id-inp" type="text" placeholder="national id.">
-            <input id="phone-num-inp" type="text" placeholder="phone number">
+            <input  #inputnationalid id="national-id-inp" type="text" placeholder="national id." name="NationalId" value="">
+            <input #inputphonenumber id="phone-num-inp" type="text" placeholder="phone number" name="PhoneNumber" value="">
         </div>
         <div class="checkbox">
-            <input type="checkbox" name="rememberme" id="rememberme">
+            <input #remembermeBox type="checkbox" name="rememberme" id="rememberme" value="true">
             <label for="rememberme " class="Bolded-Text rememberme"> Remember me ?</label>
         </div>
-        <div class="button-holder"><button class="btn1">Submit</button></div>
+        <div class="button-holder"><button  type="submit" value="submit"  (click)="GetLoginData(inputnationalid.value,inputphonenumber.value,remembermeBox.value);
+            inputnationalid.value='';
+            inputphonenumber.value='';
+            remembermeBox.value='false'
+
+            " class="btn1" type="submit">Submit</button></div>
         <div class="forgot-instructions">
             <div id="sign-up-q">Don't have an account ?</div>
             <div class="Bolded-Text"><a href="">Sign Up</a></div>
         </div>
 
     </div>
+</form>
+    
 
 </div>
