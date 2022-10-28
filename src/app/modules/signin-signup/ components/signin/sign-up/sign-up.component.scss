@@ -1,0 +1,103 @@
+
+.container{
+    margin-top: 102px;
+    margin-bottom: 158px;
+    padding-bottom: 32px;
+    padding-top: 72px;
+    background-color: #FBF4F4;
+    width: 949.97px;
+    border-radius: 35px;
+}
+.sign-in-header{
+    font-size: 32px;
+text-align:center;
+margin-bottom: 45px;
+}
+
+.input-form{
+    display: grid;
+    justify-content: center ;
+}
+//id
+#national-id-inp{
+height: 59px;
+width: 487px;
+margin-bottom: 34px;
+border-radius: 10px;
+}
+#national-id-inp::placeholder{
+    padding-left: 9px;
+}
+
+//phone
+#phone-num-inp::placeholder{
+    padding-left: 9px;
+}
+#phone-num-inp{
+    display: block;
+    height: 59px;
+    width: 487px;
+    border-radius: 10px;
+    margin: 0%;
+    margin-bottom: 48px;
+}
+//name
+#first-name-inp::placeholder{
+    padding-left: 9px;
+}
+#first-name-inp{
+    display: block;
+    height: 59px;
+    width: 487px;
+    border-radius: 10px;
+    margin: 0%;
+    margin-bottom: 48px;
+}
+#second-name-inp::placeholder{
+    padding-left: 9px;
+}
+#second-name-inp{
+    display: block;
+    height: 59px;
+    width: 487px;
+    border-radius: 10px;
+    margin: 0%;
+    margin-bottom: 48px;
+}
+//adress
+#adress-inp::placeholder{
+    padding-left: 9px;
+}
+#adress-inp{
+    display: block;
+    height: 59px;
+    width: 487px;
+    border-radius: 10px;
+    margin: 0%;
+    margin-bottom: 48px;
+}
+//email
+#email-inp::placeholder{
+    padding-left: 9px;
+}
+#email-inp{
+    display: block;
+    height: 59px;
+    width: 487px;
+    border-radius: 10px;
+    margin: 0%;
+    margin-bottom: 48px;
+
+.sign-up-button-holder{
+    display: flex;
+    justify-content:center;
+    margin-bottom: 123px;
+   button{
+    width:244.13px;
+    height: 68.04;
+   }
+}
+
+
+
+}
