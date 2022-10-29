@@ -9,6 +9,8 @@ import { HeaderComponent } from './modules/home-page/components/header/header.co
 import { SliderAnnouncComponent } from './modules/home-page/components/slider-announc/slider-announc.component';
 import { FooterComponent } from './modules/home-page/components/footer/footer.component';
 import { SignInComponent } from './modules/sign-in/components/sign-in/sign-in.component';
+import { SignUpComponent } from './modules/signin-signup/ components/signin/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { SignInComponent } from './modules/sign-in/components/sign-in/sign-in.co
     HeaderComponent,
     SliderAnnouncComponent,
     FooterComponent,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule
 
   ],
   providers: [],

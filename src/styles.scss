@@ -11,6 +11,12 @@
     border-radius: 10px;
     border: solid black 0px;
 }
+.btn1:active{
+    transform: translateY(2px);
+}
+.btn1:hover{
+    background-color: #920720;
+}
 .Bolded-Text{
     font-weight: bold;
 }
