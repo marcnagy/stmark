@@ -10,6 +10,7 @@ import { SliderAnnouncComponent } from './modules/home-page/components/slider-an
 import { FooterComponent } from './modules/home-page/components/footer/footer.component';
 import { SignInComponent } from './modules/sign-in/components/sign-in/sign-in.component';
 import { SignUpComponent } from './modules/signin-signup/ components/signin/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SignUpComponent } from './modules/signin-signup/ components/signin/sign
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule
 
   ],
   providers: [],

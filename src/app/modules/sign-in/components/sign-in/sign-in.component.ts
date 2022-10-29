@@ -11,14 +11,30 @@ export class SignInComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.SigninData.nationalid = ((<HTMLInputElement>document.getElementById("NationalId")).value)
-    console.log(this.SigninData.nationalid)
+
+  }
+  submit(login: any){
+    let rekt=login.form.controls;
+    // console.log(login.form.controls);
   }
 GetLoginData(nationalid:string,phone:any,Remembermeflag:string){
-this.SigninData.nationalid=nationalid;
+  if(nationalid.length==14 && phone.length==11 ) {
+    
+ this.SigninData.nationalid=nationalid;
 this.SigninData.phonenumber=phone;
 this.SigninData.RemembermeFlag=Remembermeflag;
-console.log( this.SigninData)
+if ((this.SigninData.RemembermeFlag) as unknown as boolean == true){
+  console.log( "Eftekrounyyyyyyy")
+
+}
+console.log(this.SigninData) 
+    
+  }
+  else{
+   console.log("error")
+  }
+
+
 }
 
 }
