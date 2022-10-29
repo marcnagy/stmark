@@ -11,16 +11,17 @@
         </div>
         <form (ngSubmit)="submit(login)"  #login="ngForm"> 
             <div class="input-form form-group col-md-12">   
-                <input required minlength="14" maxlength="14" #inputnationalid="ngModel" class="Inputfield form-control" id="national-id-inp" type="text" placeholder="national id." name="NationalId" ngModel >
-                <input required minlength="11" maxlength="11"  #inputphonenumber="ngModel" class="Inputfield form-control" id="phone-num-inp" type="text" placeholder="phone number" name="PhoneNumber" ngModel>
+                <input required minlength="14" maxlength="14" #inputnationalid="ngModel" class="Inputfield form-control" id="national-id-inp" 
+                type="text" placeholder="national id." name="NationalId" ngModel [(ngModel)]="BindedSigninData.nationalid" >
+                <input required minlength="11" maxlength="11"  #inputphonenumber="ngModel" class="Inputfield form-control" id="phone-num-inp"
+                 type="text" placeholder="phone number" name="PhoneNumber" ngModel [(ngModel)]="BindedSigninData.phonenumber">
             </div>
         <div class="checkbox form-group">
-            <input #remembermeBox="ngModel" type="checkbox" name="rememberme" id="rememberme" ngModel >
+            <input #remembermeBox="ngModel" type="checkbox" name="rememberme" id="rememberme" ngModel [(ngModel)]="BindedSigninData.RemembermeFlag">
             <label for="rememberme " class="Bolded-Text rememberme"> Remember me ?</label>
         </div>
-        <div class="button-holder"><button  (click)="GetLoginData(inputnationalid.value,inputphonenumber.value,remembermeBox.value);
-            
-            " class="btn1" type="submit">Submit</button></div>
+        <div class="button-holder"><button  (click)="GetLoginData(inputnationalid.value,inputphonenumber.value,remembermeBox.value);"
+             class="btn1" type="submit">Submit</button></div>
 
 
         </form>

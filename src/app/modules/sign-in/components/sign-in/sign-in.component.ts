@@ -8,14 +8,15 @@ import { SigninModel } from '../../models/signin';
 })
 export class SignInComponent implements OnInit {
   SigninData: SigninModel = new SigninModel; 
+  BindedSigninData :SigninModel = new SigninModel;
   constructor() { }
 
   ngOnInit(): void {
-
   }
   submit(login: any){
+    console.log(this.BindedSigninData)
+
     let rekt=login.form.controls;
-    // console.log(login.form.controls);
   }
 GetLoginData(nationalid:string,phone:any,Remembermeflag:string){
   if(nationalid.length==14 && phone.length==11 ) {
