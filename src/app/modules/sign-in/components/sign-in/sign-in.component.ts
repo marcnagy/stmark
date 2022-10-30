@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { person } from '../../model/person';
-import { PersonService } from '../../services/person.service';
+import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
 
 @Component({
@@ -9,14 +8,14 @@ import { SigninModel } from '../../models/signin';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  title="sign in";
-  personA:person[]=[];  SigninData: SigninModel = new SigninModel; 
+  title="signin.ui";
+  personA:SigninModel[]=[]; 
+   SigninData: SigninModel = new SigninModel; 
   BindedSigninData :SigninModel = new SigninModel;
-  constructor(private personService:PersonService) { }
+  constructor(private sign_inService1:sign_inService) { }
 
   ngOnInit(): void {
-    this.personA=this.personService.getPerson();
-    console.log(this.personA);
+    this.sign_inService1.getPerson().subscribe((result:SigninModel[])=>(this.personA=result));
   }
   submit(login: any){
     console.log(this.BindedSigninData)

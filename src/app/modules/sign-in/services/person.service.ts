@@ -1,20 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { person } from '../model/person';
+import { Observable } from 'rxjs/internal/Observable';
+import { environment } from 'src/environments/environment';
+import { SigninModel } from '../models/signin';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonService {
-
-  constructor() { }
-  public getPerson():person[]{
-    let x=new person();
-    x.National_ID="30194285744821";
-    x.First_Name="Marc";
-    x.Second_Name="Sorial";
-    x.Email="mnaguiyoussef@gmail.com";
-    x.Phone_Number="01274775167";
-    return [x];
+export class sign_inService {
+private url="SigninControllor";
+  constructor(private http:HttpClient) { }
+  public getPerson():Observable<SigninModel[]>{
+  
+    return this.http.get<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
 
   }
 }
