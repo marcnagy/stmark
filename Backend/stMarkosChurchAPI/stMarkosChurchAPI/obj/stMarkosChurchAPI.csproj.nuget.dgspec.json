@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mnagu\\Desktop\\ain shams\\agile\\project\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj": {}
+    "C:\\Users\\Lenovo\\Desktop\\Project\\stmark\\Backend\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mnagu\\Desktop\\ain shams\\agile\\project\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj": {
+    "C:\\Users\\Lenovo\\Desktop\\Project\\stmark\\Backend\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mnagu\\Desktop\\ain shams\\agile\\project\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\Project\\stmark\\Backend\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj",
         "projectName": "stMarkosChurchAPI",
-        "projectPath": "C:\\Users\\mnagu\\Desktop\\ain shams\\agile\\project\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj",
-        "packagesPath": "C:\\Users\\mnagu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mnagu\\Desktop\\ain shams\\agile\\project\\stMarkosChurchAPI\\stMarkosChurchAPI\\obj\\",
+        "projectPath": "C:\\Users\\Lenovo\\Desktop\\Project\\stmark\\Backend\\stMarkosChurchAPI\\stMarkosChurchAPI\\stMarkosChurchAPI.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lenovo\\Desktop\\Project\\stmark\\Backend\\stMarkosChurchAPI\\stMarkosChurchAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mnagu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,46 +43,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.10, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

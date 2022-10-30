@@ -19,7 +19,8 @@ export class SignInComponent implements OnInit {
     
    }
   submit(login: any){
-    console.log(this.BindedSigninData)
+    console.log(login);
+    
 
     let rekt=login.form.controls;
   }
@@ -57,9 +58,6 @@ let checker:boolean=false;
       console.log("Incorrect National Id")
     }
   }
- 
-
-
 }
 
 }
