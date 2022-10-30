@@ -1,17 +1,20 @@
 export class signupuser{
 
     constructor(){
-        this.Address='';
-        this.Phonenum='';
+        this.id='';
+        this.phonenumber='';
+        this.firstname='';
+        this.LastName='';
         this.email='';
-        this.firstname=''
-        this.nationalid=''
-        this.secondname=''
+        this.Address='';
+        
+     
+        
     }
     Address!: string;
-    Phonenum!: string;
+    phonenumber!: string;
     firstname!: string;
-    secondname!: string;
-    nationalid!: string;
+    LastName!: string;
+    id!: string;
     email!: string;
 }
