@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
 
 @Component({
@@ -7,11 +8,14 @@ import { SigninModel } from '../../models/signin';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  SigninData: SigninModel = new SigninModel; 
+  title="signin.ui";
+  personA:SigninModel[]=[]; 
+   SigninData: SigninModel = new SigninModel; 
   BindedSigninData :SigninModel = new SigninModel;
-  constructor() { }
+  constructor(private sign_inService1:sign_inService) { }
 
   ngOnInit(): void {
+    this.sign_inService1.getPerson().subscribe((result:SigninModel[])=>(this.personA=result));
   }
   submit(login: any){
     console.log(this.BindedSigninData)
