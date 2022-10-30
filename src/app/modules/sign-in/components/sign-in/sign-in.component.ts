@@ -45,17 +45,17 @@ let checker:boolean=false;
       if(x.id==id){
         if(x.phonenumber==phone){
           
-          console.log("login Successfully")
+          alert("login Successfully")
           checker=true;
           break;
         }
         else{
-          console.log("Incorrect Phone Number")
+          alert("Incorrect Phone Number")
         }
       }
     }
     if(checker==false){
-      console.log("Incorrect National Id")
+      alert("Incorrect National Id")
     }
   }
 }

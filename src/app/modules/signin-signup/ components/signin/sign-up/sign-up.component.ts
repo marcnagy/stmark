@@ -28,13 +28,13 @@ let checker:boolean=false;
 
     for(x  of (this.persons)){
       if(x.id==nationalid)
-      {console.log("NationalID is already in use ",x.id)
+      {alert("NationalID is already in use "+ x.id)
         checker=true;
         break;}
     }
     if(checker==false){
       this.CreateUser(this.User);
-      console.log("Signup Successfully")
+      alert("Signup Successfully")
     }
 }
 CreateUser(user:signupuser){
