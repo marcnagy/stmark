@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { signupuser } from '../../../models/Signup';
+import { sign_UpService } from '../../../services/person.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,18 +10,38 @@ import { signupuser } from '../../../models/Signup';
 export class SignUpComponent implements OnInit {
   User: signupuser = new signupuser;
   UserBinded :signupuser=new signupuser;
-  constructor() { }
-
+  @Output() CreatedUsers = new EventEmitter<signupuser[]>();
+  constructor(private sign_UpService1:sign_UpService) { }
+  persons: signupuser[]=[];
   ngOnInit(): void {
-    console.log()
+   this.sign_UpService1.getPerson().subscribe((result: signupuser[])=>(this.persons=result));
   }
   GetSignUpdata(nationalid:string,phone:string,first:string,second:string,adress:string,email:string){
 this.User.Address=adress;
-this.User.nationalid=nationalid;
-this.User.Phonenum=phone;
+this.User.id=nationalid;
+this.User.phonenumber=phone;
 this.User.firstname=first;
-this.User.secondname=second
+this.User.LastName=second
 this.User.email=email
+let x:signupuser;
+let checker:boolean=false;
+
+    for(x  of (this.persons)){
+      if(x.id==nationalid)
+      {alert("NationalID is already in use "+ x.id)
+        checker=true;
+        break;}
+    }
+    if(checker==false){
+      this.CreateUser(this.User);
+      alert("Signup Successfully")
+    }
+}
+CreateUser(user:signupuser){
+  this.sign_UpService1
+  .CreateUser(user)
+  .subscribe((Users:signupuser[]) => this.CreatedUsers.emit(Users));
+
 }
 GetUserSignUpData(){
 console.log(this.UserBinded)

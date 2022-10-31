@@ -1,6 +1,6 @@
 export class SigninModel{
-    nationalid:string=""
+    id:string="";
     phonenumber:string="";
     RemembermeFlag:string="true";
-    
+   
 }

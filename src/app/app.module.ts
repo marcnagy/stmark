@@ -11,6 +11,8 @@ import { FooterComponent } from './modules/home-page/components/footer/footer.co
 import { SignInComponent } from './modules/sign-in/components/sign-in/sign-in.component';
 import { SignUpComponent } from './modules/signin-signup/ components/signin/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [],

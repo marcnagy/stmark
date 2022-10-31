@@ -12,6 +12,9 @@
     }
 }
 .navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
    li{
     padding-left: 100px;
     padding-right: 100px;
