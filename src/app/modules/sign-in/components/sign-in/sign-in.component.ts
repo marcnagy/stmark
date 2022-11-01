@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
   persons: SigninModel[]=[];
    SigninData: SigninModel = new SigninModel; 
   BindedSigninData :SigninModel = new SigninModel;
-  constructor(private sign_inService1:sign_inService) { }
+  constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
 
   ngOnInit(): void { 
     this.sign_inService1.getPerson().subscribe((result: SigninModel[])=>(this.persons=result));
@@ -48,6 +48,7 @@ let checker:boolean=false;
           
           alert("login Successfully")
           checker=true;
+          this.myrouter.navigate([""]);
           this.sign_inService1.Signedin=checker;
           this.sign_inService1.FirstName=x.id;
           break;

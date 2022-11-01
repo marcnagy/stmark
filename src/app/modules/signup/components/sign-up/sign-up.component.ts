@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { signupuser } from '../../models/Signup';
 import { sign_UpService } from '../../services/person.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +13,7 @@ export class SignUpComponent implements OnInit {
   User: signupuser = new signupuser;
   UserBinded :signupuser=new signupuser;
   @Output() CreatedUsers = new EventEmitter<signupuser[]>();
-  constructor(private sign_UpService1:sign_UpService) { }
+  constructor(private sign_UpService1:sign_UpService,private myrouter:Router) { }
   persons: signupuser[]=[];
   ngOnInit(): void {
    this.sign_UpService1.getPerson().subscribe((result: signupuser[])=>(this.persons=result));
@@ -35,6 +37,7 @@ let checker:boolean=false;
     if(checker==false){
       this.CreateUser(this.User);
       alert("Signup Successfully")
+      this.myrouter.navigate(["/SignIn"])
     }
 }
 CreateUser(user:signupuser){
