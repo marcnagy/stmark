@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { signupuser } from '../../../models/Signup';
-import { sign_UpService } from '../../../services/person.service';
+import { signupuser } from '../../models/Signup';
+import { sign_UpService } from '../../services/person.service';
 
 @Component({
   selector: 'app-sign-up',

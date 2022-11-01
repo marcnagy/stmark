@@ -1,6 +1,6 @@
 .logosection{
     display: flex;
-    justify-content: center;
+    justify-content: end;
 
 }
 .Username{
@@ -9,7 +9,6 @@
 }
 .leftsection{
     display: flex;
-    padding-left: 112px;
     height: fit-content;
     align-items: center;
    
@@ -28,6 +27,7 @@
     margin-top: 49px;
     display: flex;
     align-items: center;
+    padding: 0 112px;
 }
 .container{
     width: 100%;
