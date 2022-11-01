@@ -7,7 +7,7 @@ import { Title } from "@angular/platform-browser";
 
 export class HomeComponent{
     constructor( private titleService: Title){
-        this.titleService.setTitle("GRID");
+        this.titleService.setTitle("St Mark");
     }
   
 
