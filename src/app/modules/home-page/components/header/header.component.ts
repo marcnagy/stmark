@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   
   constructor( private sign_inService1:sign_inService) { }
   showBut:boolean=this.sign_inService1.Signedin;
+  
+    
+  
   FirstName :string =this.sign_inService1.FirstName = "Youssef";
 
   ngOnInit(): void {
@@ -18,6 +21,13 @@ export class HeaderComponent implements OnInit {
    Alertmes():number{
     console.log("OOpsie");
 return 76
+  }
+
+  checkSignedin(){
+    // if(this.showBut){
+    //   (document.getElementById("header-but")as HTMLInputElement).classList.add("SignedIn");
+    // }
+
   }
 
 }
