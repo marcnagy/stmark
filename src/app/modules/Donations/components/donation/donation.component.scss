@@ -7,7 +7,7 @@
 }
 .radiobut{
     p{
-        margin-right: 60px;
+       margin-bottom: unset;
     }
     display: flex;
     justify-content: center;
@@ -53,9 +53,6 @@ input[type="radio"]:checked + label{
     display: flex;
 }
 .giving-frequency{
-    p{
-        margin-bottom:unset ;
-    }
     height: 84px;
     font-size: 25px;
     width: 468px;
@@ -69,7 +66,19 @@ input[type="radio"]:checked + label{
 }
 #donation-amount{
     display: flex;
+    margin-bottom: 108px;
+
 }
 .giving-amount{
-
+    height: 84px;
+    width:184px ;
+    border-radius: 30px;
+    font-size: 30px;
+    margin-right: 22px;
+}
+.donatebut{
+    height: 92px;
+    width: 307px;
+    font-size: 35px;
+    border-radius: 30px;
 }
