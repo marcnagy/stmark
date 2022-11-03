@@ -16,6 +16,11 @@ const routes: Routes = [
     path:'SignUp',
     loadChildren: () =>
       import('./modules/signup/sign-up.module').then((m) => m.SignUpModule)
+  },
+  {
+    path:'donation',
+    loadChildren: () =>
+      import('./modules/Donations/donation.module').then((m) => m.DonationModule)
   }
 ];
 
