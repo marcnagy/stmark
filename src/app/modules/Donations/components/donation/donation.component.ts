@@ -19,16 +19,19 @@ export class DonationComponent implements OnInit {
     (document.getElementById("shown-section") as HTMLInputElement).classList.add("hidden") ;
     (document.getElementById("hidden-section") as HTMLInputElement).classList.remove("hidden") ;
   }
-  submit(login:NgForm){
-    console.log(login);
+  submit(){
+    // console.log(login);
   }
 
   GetDonationData(entity:string,frequency:string,amount:number){
-    this.Donation1.donationentity=entity;
+    if(entity!=null && frequency!=null && amount!=null){
+      this.Donation1.donationentity=entity;
     this.Donation1.donationfrequency=frequency;
     this.Donation1.donationvalue=amount;
     (this.Donation1.donationvalue) as number;
     console.log(this.Donation1);
+    }
+    
 
   }
 }
