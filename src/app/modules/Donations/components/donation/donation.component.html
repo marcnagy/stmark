@@ -3,7 +3,7 @@
         Where would you like to
         give ?
     </div>
-    <form (ngSubmit)="submit(login)"  #login="ngForm">
+    <form (ngSubmit)="submit()"  #login="ngForm">
         <div class="donation-buttons">
             <div class="row">
                 <div class="col-md-6">
@@ -43,15 +43,15 @@
         <div class="title Bolded-Text" >I would like to give:</div>
         <div id="donation-amount">
             <div >
-                <input #donationamount="ngModel" [ngModel]="donationamount.value" value="100" type="radio" name="donation-amount" id="100">
+                <input #donationamount="ngModel" [ngModel]="donationamount.value" value=100 type="radio" name="donation-amount" id="100">
                 <label class=" giving-amount radiobut Bolded-Text" for="100"><p>100</p></label>
             </div>
             <div >
-                <input #donationamount="ngModel" [ngModel]="donationamount.value" value="200" type="radio" name="donation-amount" id="200">
+                <input #donationamount="ngModel" [ngModel]="donationamount.value" value=200 type="radio" name="donation-amount" id="200">
                 <label class=" giving-amount radiobut Bolded-Text" for="200"><p>200</p></label>
             </div>
             <div >
-                <input #donationamount="ngModel" [ngModel]="donationamount.value" value="300" type="radio" name="donation-amount" id="300">
+                <input #donationamount="ngModel" [ngModel]="donationamount.value" value=300 type="radio" name="donation-amount" id="300">
                 <label class=" giving-amount radiobut Bolded-Text" for="300"><p>300</p></label>
             </div>
             <div id="shown-section" >
@@ -62,6 +62,6 @@
                 <input #donationamount="ngModel" [ngModel]="donationamount.value" ngModel type="number" class=" form-control Bolded-Text" name="donation-amount"  id="Amount-donated" placeholder="Amount">
             </div>
         </div>
-        <button class="donatebut btn1" type="submit">Donate</button>
+        <button class="donatebut btn1" (click)="GetDonationData(donationentity.value,donationfrequency.value,donationamount.value)" type="submit">Donate</button>
     </form>
 </div>
