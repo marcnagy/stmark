@@ -3,7 +3,7 @@
         Where would you like to
         give ?
     </div>
-    <form (ngSubmit)="submit()"  #login="ngForm">
+    <form (ngSubmit)="submit(login)"  #login="ngForm">
         <div class="donation-buttons">
             <div class="row">
                 <div class="col-md-6">
@@ -43,7 +43,7 @@
         <div class="title Bolded-Text" >I would like to give:</div>
         <div id="donation-amount">
             <div >
-                <input #donationamount="ngModel" [ngModel]="donationamount.value" value=100 type="radio" name="donation-amount" id="100">
+                <input #donationamount="ngModel" [ngModel]="donationamount.value"  value=100 type="radio" name="donation-amount" id="100">
                 <label class=" giving-amount radiobut Bolded-Text" for="100"><p>100</p></label>
             </div>
             <div >
