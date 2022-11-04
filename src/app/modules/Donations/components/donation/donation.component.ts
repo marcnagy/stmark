@@ -12,4 +12,10 @@ export class DonationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  DisplayAmount(){
+    (document.getElementById("shown-section") as HTMLInputElement).classList.add("hidden") ;
+    (document.getElementById("hidden-section") as HTMLInputElement).classList.remove("hidden") ;
+
+
+  }
 }

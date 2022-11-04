@@ -54,9 +54,12 @@
                 <input type="radio" name="donation-amount" id="300">
                 <label class=" giving-amount radiobut Bolded-Text" for="300"><p>300</p></label>
             </div>
-            <div >
+            <div id="shown-section" >
                 <input type="radio" name="donation-amount" id="other">
-                <label class=" giving-amount radiobut Bolded-Text" for="other"><p>other</p></label>
+                <label (click)="DisplayAmount()" class=" giving-amount radiobut Bolded-Text" for="other"><p>other</p></label>
+            </div>
+            <div class="hidden-amount hidden" name="donation-amount" id="hidden-section">
+                <input type="text" class=" Bolded-Text" name="Amount" id="Amount-donated" placeholder="Amount">
             </div>
         </div>
         <button class="donatebut btn1">Donate</button>

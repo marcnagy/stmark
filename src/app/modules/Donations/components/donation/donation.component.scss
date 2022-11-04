@@ -82,3 +82,28 @@ input[type="radio"]:checked + label{
     font-size: 35px;
     border-radius: 30px;
 }
+.hidden-amount{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#Amount-donated::placeholder{
+    color: rgba(156, 156, 156, 1);
+    padding-bottom: 22px;
+}
+#Amount-donated{
+    font-size: 30px;
+    border: none;
+    border-bottom: solid 3px rgba(156, 156, 156, 1);
+    padding-bottom: 22px;
+}
+input[type="text"]:focus{
+    outline: none;
+    background-color: white;
+}
+.showInput{
+    display: block;
+}
+.hidden{
+    display: none;
+}
