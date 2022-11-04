@@ -15,7 +15,9 @@ export class DonationComponent implements OnInit {
   DisplayAmount(){
     (document.getElementById("shown-section") as HTMLInputElement).classList.add("hidden") ;
     (document.getElementById("hidden-section") as HTMLInputElement).classList.remove("hidden") ;
-
+  }
+  submit(login:any){
+    console.log(login);
 
   }
 }

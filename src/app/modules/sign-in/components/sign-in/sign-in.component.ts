@@ -19,11 +19,13 @@ export class SignInComponent implements OnInit {
     this.sign_inService1.getPerson().subscribe((result: SigninModel[])=>(this.persons=result));
     
    }
-  submit(login: any){
-    console.log(login);
+  submit(){
     
 
-    let rekt=login.form.controls;
+  }
+  login2(){
+    console.log(this.SigninData) ;
+
   }
 GetLoginData(id:string,phone:string,Remembermeflag:string){
   if(id.length==14 && phone.length==11 ) {
@@ -38,7 +40,7 @@ if ((this.SigninData.RemembermeFlag) as unknown as boolean == true){
 else{
   console.log("Remember flag off")
  }
-console.log(this.SigninData) 
+console.log(this.SigninData) ;
 let x:SigninModel;
 let checker:boolean=false;
     for(x of (this.persons))
