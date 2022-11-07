@@ -11,25 +11,19 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   User: signupuser = new signupuser;
-  UserBinded :signupuser=new signupuser;
+  UserBinded :signupuser =new signupuser;
   @Output() CreatedUsers = new EventEmitter<signupuser[]>();
   constructor(private sign_UpService1:sign_UpService,private myrouter:Router) { }
   persons: signupuser[]=[];
   ngOnInit(): void {
    this.sign_UpService1.getPerson().subscribe((result: signupuser[])=>(this.persons=result));
   }
-  GetSignUpdata(nationalid:string,phone:string,first:string,second:string,adress:string,email:string){
-this.User.Address=adress;
-this.User.id=nationalid;
-this.User.phonenumber=phone;
-this.User.firstname=first;
-this.User.LastName=second
-this.User.email=email
-let x:signupuser;
-let checker:boolean=false;
-
-    for(x  of (this.persons)){
-      if(x.id==nationalid)
+ 
+Authenticate(){
+  let x:signupuser
+  let checker:boolean=false;
+  for(x  of (this.persons)){
+      if(x.id==this.UserBinded.id)
       {alert("NationalID is already in use "+ x.id)
         checker=true;
         break;}
@@ -40,14 +34,22 @@ let checker:boolean=false;
       this.myrouter.navigate(["/SignIn"])
     }
 }
+
+
+    
+
 CreateUser(user:signupuser){
   this.sign_UpService1
   .CreateUser(user)
   .subscribe((Users:signupuser[]) => this.CreatedUsers.emit(Users));
 
 }
-GetUserSignUpData(){
+GetUserSignUpData(login:any){
 console.log(this.UserBinded)
+// console.log(login.value);
+// this.User=login.value;
+// console.log(this.User)
+
 }
 
 }

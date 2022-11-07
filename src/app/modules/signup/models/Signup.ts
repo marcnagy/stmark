@@ -11,10 +11,10 @@ export class signupuser{
      
         
     }
-    Address!: string;
-    phonenumber!: string;
-    firstname!: string;
-    LastName!: string;
-    id!: string;
-    email!: string;
+    Address: string;
+    phonenumber: string;
+    firstname: string;
+    LastName: string;
+    id: string;
+    email: string;
 }

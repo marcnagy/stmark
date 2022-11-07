@@ -13,47 +13,50 @@ export class SignInComponent implements OnInit {
 
   title="signin.ui";
   persons: SigninModel[]=[];
-   SigninData: SigninModel = new SigninModel; 
+  SigninData: SigninModel = new SigninModel; 
+  SigninBinded :SigninModel= new SigninModel;
   constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
 
   ngOnInit(): void { 
     this.sign_inService1.getPerson().subscribe((result: SigninModel[])=>(this.persons=result));
     
    }
-  submit(login:NgForm)
+  submit(login:any)
   {
-    this.SigninData=login.value
-    if(this.SigninData.id.length==14 && this.SigninData.phonenumber.length==11 ) {
-     if ((this.SigninData.RemembermeFlag) as unknown as boolean == true){
+    this.SigninData=login.value;
+    console.log(this.SigninData.RemembermeFlag)
+
+    
+     if (this.SigninData.RemembermeFlag){
        console.log( "Remember flag on")
      }
      else{
        console.log("Remember flag off")
       }
-     console.log(this.SigninData) ;
-     let x:SigninModel;
-     let checker:boolean=false;
-         for(x of (this.persons))
-         {
-           if(x.id==this.SigninData.id){
-             if(x.phonenumber==this.SigninData.phonenumber){
+    //  console.log(this.SigninData) ;
+    //  let x:SigninModel;
+    //  let checker:boolean=false;
+    //      for(x of (this.persons))
+    //      {
+    //        if(x.id==this.SigninData.id){
+    //          if(x.phonenumber==this.SigninData.phonenumber){
                
-               alert("login Successfully")
-               checker=true;
-               this.myrouter.navigate([""]);
-               this.sign_inService1.Signedin=checker;
-               this.sign_inService1.FirstName=x.id;
-               break;
-             }
-             else{
-               alert("Incorrect Phone Number")
-             }
-           }
-         }
-         if(checker==false){
-           alert("Incorrect National Id")
-         }
-       }
+    //            alert("login Successfully")
+    //            checker=true;
+    //            this.myrouter.navigate([""]);
+    //            this.sign_inService1.Signedin=checker;
+    //            this.sign_inService1.FirstName=x.id;
+    //            break;
+    //          }
+    //          else{
+    //            alert("Incorrect Phone Number")
+    //          }
+    //        }
+    //      }
+    //      if(checker==false){
+    //        alert("Incorrect National Id")
+    //      }
+       
 
 
   }
