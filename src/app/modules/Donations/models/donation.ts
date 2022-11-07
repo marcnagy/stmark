@@ -1,5 +1,6 @@
 export class Donation{
+   // the name attribute in the html input tag must be the same as the model attribute
     donationentity:string='';
     donationfrequency:string='';
-    donationvalue:number=0;
+    donationamount:string='';
 }

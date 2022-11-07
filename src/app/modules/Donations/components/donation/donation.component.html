@@ -3,26 +3,26 @@
         Where would you like to
         give ?
     </div>
-    <form (ngSubmit)="submit()"  #login="ngForm">
+    <form (ngSubmit)="submit(login)"  #login="ngForm">
         <div class="donation-buttons">
-            <div class="row">
-                <div class="col-md-6">
-                    <input #donationentity ngModel [ngModel]="donationentity.value" required value="shelter" type="radio"  name="donation-entity" id="shelter">
-                    <label class="donation-input radiobut Bolded-Text" for="shelter"><p>Shelter Families</p><img src="assets/pictures/family.png" alt=""></label>
+            <div class="row ">
+                <div class="col-md-6 form-group">
+                    <input   ngModel required value="shelter" type="radio"  name="donationentity" id="shelter">
+                    <label class="donation-input form-control radiobut Bolded-Text" for="shelter"><p>Shelter Families</p><img src="assets/pictures/family.png" alt=""></label>
                 </div>
-                <div class="col-lg-6">
-                    <input #donationentity ngModel [ngModel]="donationentity.value" required value="people in need" type="radio" name="donation-entity" id="People">
-                    <label class="donation-input radiobut Bolded-Text" for="People"><p>People in need</p>  <img src="assets/pictures/poverty.png" alt=""></label>
+                <div class="col-lg-6 form-group">
+                    <input   ngModel  required value="people in need" type="radio" name="donationentity" id="People">
+                    <label class="donation-input form-control radiobut Bolded-Text" for="People"><p>People in need</p>  <img src="assets/pictures/poverty.png" alt=""></label>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <input #donationentity ngModel [ngModel]="donationentity.value" required value="church buildings" type="radio" name="donation-entity" id="buildings">
-                    <label class="donation-input radiobut Bolded-Text" for="buildings"> <p>Church buildings</p>  <img src="assets/pictures/church.png" alt=""></label>
+                <div class="col-lg-6 form-group">
+                    <input   ngModel  required value="church buildings" type="radio" name="donationentity" id="buildings">
+                    <label class="donation-input form-control radiobut Bolded-Text" for="buildings"> <p>Church buildings</p>  <img src="assets/pictures/church.png" alt=""></label>
                 </div>
-                <div class="col-lg-6">
-                    <input #donationentity ngModel [ngModel]="donationentity.value" required value="church projects" type="radio" name="donation-entity" id="projects">
-                    <label  class="donation-input radiobut Bolded-Text" for="projects"><p>Church projects</p> <img src="assets/pictures/under-construction.png"></label>
+                <div class="col-lg-6 form-group">
+                    <input  ngModel ngModel required value="church projects" type="radio" name="donationentity" id="projects">
+                    <label  class="donation-input form-control radiobut Bolded-Text" for="projects"><p>Church projects</p> <img src="assets/pictures/under-construction.png"></label>
                 </div>
             </div>
         </div>
@@ -31,37 +31,41 @@
             <div class="title" class="Bolded-Text"> Giving Options:</div>
             <div class="frequency">
                 <div >
-                    <input #donationfrequency="ngModel" required [ngModel]="donationfrequency.value" value="once" type="radio" name="donation-frequency" id="once">
-                    <label class=" giving-frequency radiobut Bolded-Text" for="once"><p>One time donation</p></label>
+                    <input ngModel  required  value="once" type="radio" name="donationfrequency" id="once">
+                    <label class=" giving-frequency form-control radiobut Bolded-Text" for="once"><p>One time donation</p></label>
                 </div>
                 <div>
-                    <input #donationfrequency="ngModel" required [ngModel]="donationfrequency.value" value="monthly" type="radio" name="donation-frequency" id="frequency">
-                    <label  class=" giving-frequency radiobut Bolded-Text" for="frequency"><p>Monthly donation</p></label>
+                    <input ngModel   required  value="monthly" type="radio" name="donationfrequency" id="frequency">
+                    <label  class=" giving-frequency form-control radiobut Bolded-Text" for="frequency"><p>Monthly donation</p></label>
                 </div>
             </div>
         </div>
         <div class="title Bolded-Text" >I would like to give:</div>
         <div id="donation-amount">
             <div >
-                <input #donationamount="ngModel" required [ngModel]="donationamount.value"  value=100 type="radio" name="donation-amount" id="100">
-                <label class=" giving-amount radiobut Bolded-Text" for="100"><p>100</p></label>
+                <input    ngModel required   value=100 type="radio" name="donationamount" id="100">
+                <label class=" giving-amount form-control radiobut Bolded-Text" for="100"><p>100</p></label>
             </div>
             <div >
-                <input #donationamount="ngModel" required [ngModel]="donationamount.value" value=200 type="radio" name="donation-amount" id="200">
-                <label class=" giving-amount radiobut Bolded-Text" for="200"><p>200</p></label>
+                <input    ngModel required value=200 type="radio" name="donationamount" id="200">
+                <label class=" giving-amount form-control radiobut Bolded-Text" for="200"><p>200</p></label>
             </div>
             <div >
-                <input #donationamount="ngModel" required [ngModel]="donationamount.value" value=300 type="radio" name="donation-amount" id="300">
-                <label class=" giving-amount radiobut Bolded-Text" for="300"><p>300</p></label>
+                <input    ngModel required value=300 type="radio" name="donationamount" id="300">
+                <label class=" giving-amount form-control radiobut Bolded-Text" for="300"><p>300</p></label>
             </div>
             <div id="shown-section" >
-                <input #donationamount="ngModel" required [ngModel]="donationamount.value" type="radio" name="donation-amount" id="other">
+                <input    required  type="radio" name="donation-amount" id="other">
                 <label (click)="DisplayAmount()" class=" giving-amount radiobut Bolded-Text" for="other"><p>other</p></label>
             </div>
             <div class="hidden-amount hidden form-group" id="hidden-section">
-                <input #donationamount="ngModel" required [ngModel]="donationamount.value" ngModel type="number" class=" form-control Bolded-Text" name="donation-amount"  id="Amount-donated" placeholder="Amount">
+                <input    required ngModel   type="text" class=" form-control Bolded-Text" name="donationamount"  id="Amount-donated" placeholder="Amount">
             </div>
         </div>
-        <button class="donatebut btn1" (click)="GetDonationData(donationentity.value,donationfrequency.value,donationamount.value)" type="submit">Donate</button>
+        <button class="donatebut btn1" [disabled]="login.invalid" type="submit">Donate</button>
     </form>
 </div>
+<!-- (click)="GetDonationData(donationentity.value,donationfrequency.value,donationamount.value)" -->
+<!-- #donationentity
+#donationfrequency
+#donationamount -->
