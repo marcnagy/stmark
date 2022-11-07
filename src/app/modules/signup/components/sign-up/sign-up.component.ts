@@ -49,6 +49,7 @@ console.log(this.UserBinded)
 // console.log(login.value);
 // this.User=login.value;
 // console.log(this.User)
+this.Authenticate();
 
 }
 

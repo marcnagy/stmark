@@ -14,26 +14,27 @@ export class SignInComponent implements OnInit {
   title="signin.ui";
   persons: SigninModel[]=[];
   SigninData: SigninModel = new SigninModel; 
-  SigninBinded :SigninModel= new SigninModel;
+  SigninBinded: SigninModel = new SigninModel;
   constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
 
   ngOnInit(): void { 
     this.sign_inService1.getPerson().subscribe((result: SigninModel[])=>(this.persons=result));
     
    }
-  submit(login:any)
-  {
+  submit(login:any){
     this.SigninData=login.value;
-    console.log(this.SigninData.RemembermeFlag)
+    console.log(this.SigninBinded)
+    console.log(this.SigninData.id);
+    console.log(this.SigninData.phonenumber);
+    console.log(this.SigninData.RemembermeFlag);
 
-    
      if (this.SigninData.RemembermeFlag){
        console.log( "Remember flag on")
      }
      else{
        console.log("Remember flag off")
       }
-    //  console.log(this.SigninData) ;
+     console.log(this.SigninData) ;
     //  let x:SigninModel;
     //  let checker:boolean=false;
     //      for(x of (this.persons))
@@ -56,9 +57,6 @@ export class SignInComponent implements OnInit {
     //      if(checker==false){
     //        alert("Incorrect National Id")
     //      }
-       
-
-
   }
  
 GetLoginData(id:string,phone:string,Remembermeflag:string){
