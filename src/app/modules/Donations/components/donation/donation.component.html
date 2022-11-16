@@ -21,7 +21,7 @@
                     <label class="donation-input form-control radiobut Bolded-Text" for="buildings"> <p>Church buildings</p>  <img src="assets/pictures/church.png" alt=""></label>
                 </div>
                 <div class="col-lg-6 form-group">
-                    <input  ngModel ngModel required value="church projects" type="radio" name="donationentity" id="projects">
+                    <input  ngModel required value="church projects" type="radio" name="donationentity" id="projects">
                     <label  class="donation-input form-control radiobut Bolded-Text" for="projects"><p>Church projects</p> <img src="assets/pictures/under-construction.png"></label>
                 </div>
             </div>
@@ -43,7 +43,7 @@
         <div class="title Bolded-Text" >I would like to give:</div>
         <div id="donation-amount">
             <div >
-                <input    ngModel required   value=100 type="radio" name="donationamount" id="100">
+                <input  ngModel required value=100 type="radio" name="donationamount" id="100">
                 <label class=" giving-amount form-control radiobut Bolded-Text" for="100"><p>100</p></label>
             </div>
             <div >
@@ -55,14 +55,14 @@
                 <label class=" giving-amount form-control radiobut Bolded-Text" for="300"><p>300</p></label>
             </div>
             <div id="shown-section" >
-                <input    required  type="radio" name="donation-amount" id="other">
+                <input    required  type="radio" name="donationamount" id="other">
                 <label (click)="DisplayAmount()" class=" giving-amount radiobut Bolded-Text" for="other"><p>other</p></label>
             </div>
             <div class="hidden-amount hidden form-group" id="hidden-section">
-                <input    required ngModel   type="text" class=" form-control Bolded-Text" name="donationamount"  id="Amount-donated" placeholder="Amount">
+                <input required ngModel type="text" class=" form-control Bolded-Text" name="donationamount"  id="Amount-donated" placeholder="Amount">
             </div>
         </div>
-        <button class="donatebut btn1" [disabled]="login.invalid" type="submit">Donate</button>
+        <button class="donatebut btn1"   type="submit" >Donate</button>
     </form>
 </div>
 <!-- (click)="GetDonationData(donationentity.value,donationfrequency.value,donationamount.value)" -->

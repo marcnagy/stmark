@@ -16,7 +16,6 @@ import { HomePageRoutingModule } from './home-routing.module';
         CommonModule,
         HomePageRoutingModule,
         SwiperModule
-      ]
-
+    ]
 })
 export class HomePageModule{}
