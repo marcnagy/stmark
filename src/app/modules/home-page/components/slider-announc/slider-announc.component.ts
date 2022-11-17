@@ -15,8 +15,8 @@ export class SliderAnnouncComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
     this.swiperConfig2={
-      slidesPerView:3,  
-      spaceBetween:50,
+      slidesPerView:2,  
+      spaceBetween:100,
       loop:true,
       clickable:true,
     }
