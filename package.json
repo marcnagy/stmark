@@ -7,6 +7,6 @@
   "dependencies": {
     "express" : "4.13.3"
   },
-  "author": {"Gandalf dev"},
+  "author": "Gandalf dev",
   "license": "ISC"
 }
