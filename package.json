@@ -1,12 +1,13 @@
 {
   "name": "stmark",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
     "ng": "ng",
+    "start": "node serve.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild":"ng build --configuration production"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +26,7 @@
     "swiper": "^8.4.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
-    "express" : "4.13.3"
+    "express":"4.17.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.6",
