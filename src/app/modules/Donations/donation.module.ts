@@ -4,12 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { DonationRoutingModule } from './donation-routing.module';
 import { DonationComponent } from './components/donation/donation.component';
 import { PaymentComponent } from './components/payment/payment.component';
-
 @NgModule({
     declarations:[
-        
-
-    
     DonationComponent,
     PaymentComponent
   ],
@@ -17,10 +13,6 @@ import { PaymentComponent } from './components/payment/payment.component';
         CommonModule,
         FormsModule,
         DonationRoutingModule,
-        
-
-
     ]
-
 })
 export class DonationModule{}

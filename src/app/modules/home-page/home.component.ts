@@ -4,7 +4,6 @@ import { Title } from "@angular/platform-browser";
     selector:'app-home',
     templateUrl:'./home.component.html'
 })
-
 export class HomeComponent{
     constructor( private titleService: Title){
         this.titleService.setTitle("St Mark");

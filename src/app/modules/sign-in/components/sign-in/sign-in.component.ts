@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',

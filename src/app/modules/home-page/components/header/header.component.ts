@@ -8,7 +8,7 @@ import { sign_inService } from 'src/app/modules/sign-in/services/person.service'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+  test:number=5;
   constructor( private sign_inService1:sign_inService) { }
   showBut:boolean=this.sign_inService1.Signedin;
   
@@ -29,5 +29,7 @@ return 76
     // }
 
   }
+
+
 
 }
