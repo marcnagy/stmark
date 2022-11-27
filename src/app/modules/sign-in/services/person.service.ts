@@ -13,12 +13,10 @@ private url="SigninControllor";
   FirstName:string='';
   Signedin: boolean=false;
   constructor(private http:HttpClient) { }
-  public getPerson():Observable<SigninModel[]>{
+  public getPerson(id:string,phonenumber:string):Observable<SigninModel>{
   
-    return this.http.get<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
+    return this.http.get<SigninModel>(`${environment.apiUrl}/${this.url}/${id},${phonenumber}`);
 
   }
-  // public GetLoginData():Observable<SigninModel[]>{
-  //   return this.http.put<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
-  // }
+ 
 }
