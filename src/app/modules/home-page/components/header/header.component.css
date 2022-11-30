@@ -1,0 +1,91 @@
+.Username {
+  font-size: 24px;
+  margin-left: 50px;
+}
+
+.leftsection {
+  display: flex;
+  align-items: center;
+}
+
+.header-img {
+  margin-right: 16px;
+}
+
+#header-but {
+  margin-left: 110px;
+  min-width: 117px;
+  border: black solid 0;
+}
+
+.SignedIn {
+  margin-left: 112px;
+}
+
+.row {
+  align-items: center;
+  padding: 112px 49px 112px 85px;
+}
+
+.container {
+  width: 100%;
+}
+
+.church-logo {
+  position: absolute;
+  right: 10%;
+}
+
+.logoholder {
+  position: relative;
+}
+
+.logosection {
+  padding-bottom: 45px;
+}
+
+.Username {
+  font-size: 24px;
+  margin-left: 50px;
+}
+
+.leftsection {
+  display: flex;
+  align-items: center;
+}
+
+.header-img {
+  margin-right: 16px;
+}
+
+#header-but {
+  margin-left: 110px;
+  min-width: 117px;
+  border: black solid 0;
+}
+
+.SignedIn {
+  margin-left: 112px;
+}
+
+.row {
+  align-items: center;
+  padding: 112px 49px 112px 85px;
+}
+
+.container {
+  width: 100%;
+}
+
+.church-logo {
+  position: absolute;
+  right: 10%;
+}
+
+.logoholder {
+  position: relative;
+}
+
+.logosection {
+  padding-bottom: 45px;
+}/*# sourceMappingURL=header.component.css.map */

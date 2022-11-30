@@ -1,3 +1,4 @@
+@import "/src/styles.scss";
 .navbar{
     width: 100%;
     li{
@@ -35,7 +36,7 @@
 
     }
     .dropdown-item:active{
-        background-color: #AF0E2C;
+        background-color: $nav-bar-color;
     }
 }
 .navbar-nav{

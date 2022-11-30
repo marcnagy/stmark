@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import 'swiper/scss';
-@import 'assets/icons/style.scss'; 
+@import '/node_modules/bootstrap-scss/bootstrap.scss';
+
+@function rem($value,$base){
+    @if type-of($value)--"number"{
+        @return (calc($value/$base))*1rem;
+    }
+}
+
+// Variables
+$nav-bar-color:#AF0E2C;
+$backround-main-color:white;
+$footer-background-color:#FFF3F0;
+$imp-reminder-slider-color:#FBF4F4;
+$main-font-weight:bold;
+$main-font-size:20px;
 
 
 .btn1{
@@ -16,7 +28,7 @@
     transform: translateY(2px);
 }
 .btn1:hover{
-    background-color: #920720;
+    background-color:$nav-bar-color;
 }
 .Bolded-Text{
     font-weight: bold;
@@ -29,9 +41,3 @@
     border: solid 2px rgba(3, 175, 12, 0.801);
 }
 
-$backround-main-color:white;
-$footer-background-color:#FFF3F0;
-$imp-reminder-slider-color:#FBF4F4;
-$nav-bar-color:#AF0E2C;
-$main-font-weight:bold;
-$main-font-size:20px;
