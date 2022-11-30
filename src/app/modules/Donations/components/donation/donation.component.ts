@@ -38,8 +38,6 @@ export class DonationComponent implements OnInit {
 
   checkDonation(){
       this.myrouter.navigate(["donation/payment"]);
-  
-
   }
 
   

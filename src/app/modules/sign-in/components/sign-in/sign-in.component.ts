@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
 import { Router } from '@angular/router';
@@ -26,6 +26,10 @@ export class SignInComponent implements OnInit {
     console.log(this.SigninData.id);
     console.log(this.SigninData.phonenumber);
     console.log(this.SigninData.RemembermeFlag);
+    this.sign_inService1.Signedin=true;
+    console.log(this.sign_inService1.Signedin);
+
+
 
      if (this.SigninData.RemembermeFlag){
        console.log( "Remember flag on")
@@ -33,7 +37,6 @@ export class SignInComponent implements OnInit {
      else{
        console.log("Remember flag off")
       }
-     console.log(this.SigninData) ;
     //  let x:SigninModel;
     //  let checker:boolean=false;
     //      for(x of (this.persons))
