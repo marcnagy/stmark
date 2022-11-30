@@ -10,11 +10,8 @@ import { sign_inService } from 'src/app/modules/sign-in/services/person.service'
 export class HeaderComponent implements OnInit {
   test:number=5;
   constructor( private sign_inService1:sign_inService) { }
-  showBut:boolean=false;
-  
-   
-  
-  FirstName :string =this.sign_inService1.FirstName = "Youssef";
+  showBut:boolean=this.sign_inService1.Signedin;
+  FirstName :string =this.sign_inService1.firstName ;
 
   ngOnInit(): void {
     // while(true){

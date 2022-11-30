@@ -4,7 +4,7 @@ export class signupuser{
         this.id='';
         this.phonenumber='';
         this.firstname='';
-        this.LastName='';
+        this.lastName='';
         this.email='';
         this.Address='';
         
@@ -14,7 +14,7 @@ export class signupuser{
     Address: string;
     phonenumber: string;
     firstname: string;
-    LastName: string;
+    lastName: string;
     id: string;
     email: string;
 }

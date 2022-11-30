@@ -12,45 +12,32 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   User: signupuser = new signupuser;
   UserBinded :signupuser =new signupuser;
-  @Output() CreatedUsers = new EventEmitter<signupuser[]>();
   constructor(private sign_UpService1:sign_UpService,private myrouter:Router) { }
   persons: signupuser[]=[];
   ngOnInit(): void {
    this.sign_UpService1.getPerson().subscribe((result: signupuser[])=>(this.persons=result));
   }
  
-Authenticate(){
-  let x:signupuser
-  let checker:boolean=false;
-  for(x  of (this.persons)){
-      if(x.id==this.UserBinded.id)
-      {alert("NationalID is already in use "+ x.id)
-        checker=true;
-        break;}
-    }
-    if(checker==false){
-      this.CreateUser(this.User);
-      alert("Signup Successfully")
-      this.myrouter.navigate(["/SignIn"])
-    }
-}
-
-
-    
-
-CreateUser(user:signupuser){
-  this.sign_UpService1
-  .CreateUser(user)
-  .subscribe((Users:signupuser[]) => this.CreatedUsers.emit(Users));
-
-}
 GetUserSignUpData(login:any){
-console.log(this.UserBinded)
-// console.log(login.value);
-// this.User=login.value;
-// console.log(this.User)
-this.Authenticate();
-
+  let x:signupuser;
+  let checker:boolean=false;
+this.User=login.value;
+for(x  of (this.persons)){
+  console.log(this.User)
+  if(x.id==this.UserBinded.id)
+  {alert("National ID is already in use "+ x.id)
+    checker=true;
+    break;}
+    if(x.phonenumber==this.UserBinded.phonenumber)
+    {alert("Phone number is already in use "+ x.phonenumber)
+      checker=true;
+      break;}
+}
+if(checker==false){
+  this.sign_UpService1.CreateUser(this.UserBinded).subscribe()
+  alert("Signup Successfully")
+  this.myrouter.navigate(["/SignIn"])
+}
 }
 
 }

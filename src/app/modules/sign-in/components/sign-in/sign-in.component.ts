@@ -9,95 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./_sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+ person:SigninModel=new SigninModel;
   title="signin.ui";
-  persons: SigninModel[]=[];
   SigninData: SigninModel = new SigninModel; 
   SigninBinded: SigninModel = new SigninModel;
   constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
 
   ngOnInit(): void { 
-    this.sign_inService1.getPerson().subscribe((result: SigninModel[])=>(this.persons=result));
-    
    }
   submit(login:any){
     this.SigninData=login.value;
-    console.log(this.SigninBinded)
-    console.log(this.SigninData.id);
-    console.log(this.SigninData.phonenumber);
-    console.log(this.SigninData.RemembermeFlag);
-    this.sign_inService1.Signedin=true;
-    console.log(this.sign_inService1.Signedin);
-
-
-
-     if (this.SigninData.RemembermeFlag){
-       console.log( "Remember flag on")
-     }
-     else{
-       console.log("Remember flag off")
+    this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe( (person)=>{
+          alert("login Successfully")
+                       this.myrouter.navigate([""]);          
+                       this.sign_inService1.Signedin=true;    
+                       console.log(person.firstName)  
+                       this.sign_inService1.firstName=this.person.firstName;
+                      
+         },
+         (error) =>alert("id or phone number is incorrect")
+       );
       }
-    //  let x:SigninModel;
-    //  let checker:boolean=false;
-    //      for(x of (this.persons))
-    //      {
-    //        if(x.id==this.SigninData.id){
-    //          if(x.phonenumber==this.SigninData.phonenumber){
-               
-    //            alert("login Successfully")
-    //            checker=true;
-    //            this.myrouter.navigate([""]);
-    //            this.sign_inService1.Signedin=checker;
-    //            this.sign_inService1.FirstName=x.id;
-    //            break;
-    //          }
-    //          else{
-    //            alert("Incorrect Phone Number")
-    //          }
-    //        }
-    //      }
-    //      if(checker==false){
-    //        alert("Incorrect National Id")
-    //      }
-  }
- 
-GetLoginData(id:string,phone:string,Remembermeflag:string){
-//   if(id.length==14 && phone.length==11 ) {
-    
-//  this.SigninData.id=id;
-// this.SigninData.phonenumber=phone;
-// this.SigninData.RemembermeFlag=Remembermeflag;
-// if ((this.SigninData.RemembermeFlag) as unknown as boolean == true){
-//   console.log( "Remember flag on")
-
-// }
-// else{
-//   console.log("Remember flag off")
-//  }
-// console.log(this.SigninData) ;
-// let x:SigninModel;
-// let checker:boolean=false;
-//     for(x of (this.persons))
-//     {
-//       if(x.id==id){
-//         if(x.phonenumber==phone){
-          
-//           alert("login Successfully")
-//           checker=true;
-//           this.myrouter.navigate([""]);
-//           this.sign_inService1.Signedin=checker;
-//           this.sign_inService1.FirstName=x.id;
-//           break;
-//         }
-//         else{
-//           alert("Incorrect Phone Number")
-//         }
-//       }
-//     }
-//     if(checker==false){
-//       alert("Incorrect National Id")
-//     }
-//   }
-}
-
 }

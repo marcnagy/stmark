@@ -10,15 +10,17 @@ import { SigninModel } from '../models/signin';
 })
 export class sign_inService {
 private url="SigninControllor";
-  FirstName:string='';
+  firstName:string='';
   Signedin: boolean=false;
   constructor(private http:HttpClient) { }
-  public getPerson():Observable<SigninModel[]>{
+  public getPerson(id:string,phonenumber:string):Observable<SigninModel>{
+  
+    return this.http.get<SigninModel>(`${environment.apiUrl}/${this.url}/${id},${phonenumber}`);
+
+  }
+  public getPersons():Observable<SigninModel[]>{
   
     return this.http.get<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
 
   }
-  // public GetLoginData():Observable<SigninModel[]>{
-  //   return this.http.put<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
-  // }
 }
