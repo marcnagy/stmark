@@ -21,18 +21,24 @@ export class DonationComponent implements OnInit {
     (document.getElementById("hidden-section") as HTMLInputElement).classList.remove("hidden") ;
   }
   submit(login:any){
+    console.log(login)
+    if(!login.valid){
+      alert("Please Select all the buttons")
+    }
+    else{
+
     console.log(login.value)
     this.Donation1=login.value
     console.log(this.Donation1.donationentity);
     console.log(this.Donation1.donationfrequency);
     console.log(this.Donation1.donationamount);
     this.checkDonation()
+    }
   }
 
   checkDonation(){
-    if(this.Donation1.donationamount != '' && this.Donation1.donationentity!='' && this.Donation1.donationfrequency!=''){
       this.myrouter.navigate(["donation/payment"]);
-  }
+  
 
   }
 
