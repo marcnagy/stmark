@@ -18,5 +18,9 @@ private url="SigninControllor";
     return this.http.get<SigninModel>(`${environment.apiUrl}/${this.url}/${id},${phonenumber}`);
 
   }
- 
+  public getPersons():Observable<SigninModel[]>{
+  
+    return this.http.get<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
+
+  }
 }

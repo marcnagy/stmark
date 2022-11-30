@@ -10,22 +10,24 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+ person:SigninModel[]=[];
   title="signin.ui";
   SigninData: SigninModel = new SigninModel; 
   SigninBinded: SigninModel = new SigninModel;
   constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
 
   ngOnInit(): void { 
+    this.sign_inService1.getPersons().subscribe({next : (person)=>{
+      console.log(person);
 
+    }
+  });
    }
   submit(login:any){
-    let person:SigninModel;
+    
     this.SigninData=login.value;
     console.log("this sign in data")
-    this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe({next:(params)=>{
-       console.log(person)
-      }});
+    
   
     //  let x:SigninModel;
     //  let checker:boolean=false;
