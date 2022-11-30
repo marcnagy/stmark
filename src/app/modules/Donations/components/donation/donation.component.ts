@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
-  styleUrls: ['./donation.component.scss']
+  styleUrls: ['./_donation.component.scss']
 })
 export class DonationComponent implements OnInit {
   Donation1:Donation= new Donation;

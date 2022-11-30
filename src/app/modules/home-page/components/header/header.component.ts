@@ -5,7 +5,7 @@ import { sign_inService } from 'src/app/modules/sign-in/services/person.service'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./_header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   test:number=5;
