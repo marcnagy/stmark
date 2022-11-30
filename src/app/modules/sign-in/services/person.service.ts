@@ -10,7 +10,7 @@ import { SigninModel } from '../models/signin';
 })
 export class sign_inService {
 private url="SigninControllor";
-  FirstName:string='';
+  firstName:string='';
   Signedin: boolean=false;
   constructor(private http:HttpClient) { }
   public getPerson(id:string,phonenumber:string):Observable<SigninModel>{
