@@ -29,7 +29,7 @@ for(x  of (this.persons)){
     checker=true;
     break;}
     if(x.phonenumber==this.UserBinded.phonenumber)
-    {alert("Phone number is already in use "+ x.id)
+    {alert("Phone number is already in use "+ x.phonenumber)
       checker=true;
       break;}
 }
