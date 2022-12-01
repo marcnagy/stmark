@@ -27,7 +27,7 @@ private url="SigninControllor";
 
   //trial
   refreshmypage(){
-  let element: HTMLElement = document.getElementById("header-but") as HTMLElement;
+  let element: HTMLElement = document.getElementById("header-log") as HTMLElement;
   element.click();
 }
   }
