@@ -8,7 +8,7 @@ import { SigninModel } from '../../models/signin';
 })
 export class SignInComponent implements OnInit {
   SigninData: SigninModel = new SigninModel; 
-  BindedSigninData :SigninModel = new SigninModel;
+  BindedSigninData :SigninModel = new SigninModel; //model of data fields national id, phone, rember me
   constructor() { }
 
   ngOnInit(): void {
