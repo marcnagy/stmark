@@ -14,6 +14,8 @@ oldConfessions:ConfessionData[]=[];
   constructor() { }
 
   ngOnInit(): void {
+    (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
+
   }
   GetConfessionData(login:any){
   console.log(this.test);

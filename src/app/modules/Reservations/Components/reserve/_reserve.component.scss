@@ -4,7 +4,8 @@
     padding-top: 130px;
     padding-left: 415px;
     padding-right: 415px;
-
+    background-image: url('/assets/pictures/Bottom-sun-view.png');
+    background-repeat: no-repeat;
 }
 
 .tab {
@@ -18,8 +19,7 @@
         color: white;
         display: inline-block;
         padding:  13px 41px;
-        background-color: gray;
-        border: solid white 1px;
+        background-color: rgba(217, 217, 217, 1);
         cursor: pointer;
         
     }
@@ -42,8 +42,9 @@ form{
     padding:52px 0;
     border: 1px black none;
     box-shadow: 4px 4px 38px -7px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
     margin-bottom: 253px;
+    background-color: white;
+    border-top-right-radius: 20px;
 .Form-inputs{
     display: flex;
     justify-content: center;
@@ -65,7 +66,7 @@ form{
     .btn1{
         position: absolute;
         top: 151px;
-        right: 178px;
+        right: 108px;
         height: 68px;
         width: 206px;
         border-radius: 35px;

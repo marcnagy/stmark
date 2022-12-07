@@ -13,5 +13,7 @@ Alert(){
 
   ngOnInit(): void {
   }
-
+// addimg(){
+//   (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
+// }
 }
