@@ -38,8 +38,6 @@ export class HeaderComponent implements OnInit {
     sessionStorage.clear();
     this.sign_inService1.Signedin=false;
     this.ngOnInit();
-    
-  
   }
 
 

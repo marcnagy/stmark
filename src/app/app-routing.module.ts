@@ -21,6 +21,12 @@ const routes: Routes = [
     path:'donation',
     loadChildren: () =>
       import('./modules/Donations/donation.module').then((m) => m.DonationModule)
+  },
+  {
+    path:'reserve',
+    loadChildren: () =>
+      import('./modules/Reservations/reservation.module').then((m) => m.ReservationModule)
+
   }
 ];
 
