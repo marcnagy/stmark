@@ -1,13 +1,88 @@
-<div class="mycontainer">
+<div class=" mycontainer">
     <div class="tab">
         <ul>
             <li class="Bolded-Text" (click)="ChangeTab('HolyMass')" id="HolyMass">Holy Mass</li>
-            <li class="Bolded-Text active" (click)="ChangeTab('Confession')" id="Confession"> Confession</li>
+            <li class="Bolded-Text" (click)="ChangeTab('Confession')" id="Confession"> Confession</li>
         </ul>
 
     </div>
     <div class="content">
         <div class="content-value" *ngIf=" id ==='HolyMass'" >
+            <!-- The Input Section in Mass Tab -->
+
+            <form id="Mass-form" (ngSubmit)="GetMassData(login)" #login="ngForm">
+                <div class="Form-inputs form-group">
+                    <input required class="form-control" name="MassDate" [(ngModel)]="test.Fathername" type="date"  placeholder="Father">
+                    <input required class="form-control" name="MassTime" [(ngModel)]="test.ConfessionDay" type="time"  placeholder="TimeSlot">
+                    <input required class="form-control" name="MassPlace" [(ngModel)]="test.Timeslot" type="text"  placeholder="Place">
+                </div>
+                <button class="btn1"> Reserve</button>
+            </form>
+            <!-- mass Verse -->
+            <div class="Verse">
+                <p>{{Verse1}}</p>
+            </div>
+
+            <div id="MassTable" class="Table">
+                <p class="Bolded-Text">Upcoming</p>
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Prayer</th>
+                        <th>Place</th>
+                        <th>Altar</th>
+                        <th>Start Time</th>
+                        <th>end time</th>
+                        <th>Available seats</th>
+                    </tr>
+                    <tr *ngFor="let mass of masses ">
+                        <td> {{mass.day}}</td>
+                        <td> {{mass.prayer}}</td>
+                        <td> {{mass.place}}</td>
+                        <td>{{mass.altar}}</td>
+                        <td> {{mass.starttime}}</td>
+                        <td> {{mass.endtime}}</td>
+                        <td> {{mass.AvailablePlaces}}</td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div id="DetailsTable" class="Table">
+                <div class="Table-header">
+                    <p class="Bolded-Text">Reservation Details</p>
+                    <button (click)="CancelReservation()" class="btn1">Cancel Reservation</button>
+                </div>
+                
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Day</th>
+                        <th>Prayer</th>
+                        <th>Place</th>
+                        <th>altar</th>
+                        <th>Start Time</th>
+                        <th>end time</th>
+                        <th>Cancellation</th>
+                        <th>Qr Code</th>
+                    </tr>
+                    <tr *ngFor="let mass of masses ">
+                        <!-- <td> {{loggedUser}}</td> -->
+                        <td>Youssef</td>
+                        <td> {{mass.day}}</td>
+                        <td> {{mass.prayer}}</td>
+                        <td> {{mass.place}}</td>
+                        <td> {{mass.starttime}}</td>
+                        <td> {{mass.endtime}}</td>
+                        <td> {{mass.AvailablePlaces}}</td>
+                        <td> <input class="checkbox-delete" type="checkbox"></td>
+                        <td><button class="btn1">Print</button></td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <!-- This is the end of the tab -->
         </div>
         <div class="content-value " *ngIf=" id ==='Confession'">
             <form (ngSubmit)="GetConfessionData(login)" #login="ngForm">
@@ -18,11 +93,11 @@
                 </div>
                 <button class="btn1"> Reserve</button>
             </form>
-            <div class="Verse">
-                <p>For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief. ~Proverbs 24:16</p>
+            <div class="Verse2">
+                <p>{{Verse2}}</p>
             </div>
 
-            <div class="HistoryTable ">
+            <div class="Table">
                 <p class="Bolded-Text">History</p>
 
                 <table>

@@ -1,13 +1,21 @@
 @import '/src/styles.scss';
-
 .mycontainer{
     padding-top: 130px;
-    padding-left: 415px;
-    padding-right: 415px;
     background-image: url('/assets/pictures/Bottom-sun-view.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
+@include media-breakpoint-up(xl){
+.mycontainer{
+    padding-top: 130px;
+    background-image: url('/assets/pictures/Bottom-sun-view.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+}
+
 
 .tab {
     ul{
@@ -49,13 +57,15 @@ form{
 .Form-inputs{
     display: flex;
     justify-content: center;
+    padding: 0 2%;
+
+
 }
     input{
-        // margin-right: 21px;
-        width:310px;
         height: 82px;
         border-radius: 20px;
         margin-right: 20px;
+        width: 32%;
         border: 1px solid rgba(156, 156, 156, 1);
         &::content{
             padding: 22px 0 23px 20px;
@@ -73,6 +83,9 @@ form{
         border-radius: 35px;
     }
 }
+#Mass-form{
+    margin-bottom: 153px;
+}
 .Verse{
     font: 35px;
     color: rgba(84, 84, 84, 1);
@@ -82,9 +95,20 @@ form{
     font-size: 35px;
     line-height: 44px;
     text-align: center;
-    margin-bottom: 144px;
+    margin-bottom: 40px;
 }
-.HistoryTable{
+.Verse2{
+    font: 35px;
+    color: rgba(84, 84, 84, 1);
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 44px;
+    text-align: center;
+
+}
+.Table{
     margin-bottom: 176px;
     table{
      
@@ -94,13 +118,18 @@ form{
             background-color:$nav-bar-color ;
             padding: 10px 0;
             color: white;
+            border-right:solid 1px white ;
+            border-bottom:solid 12px white;
         }
         td{
        
             padding: 10px 0;
-            background-color:rgba(251, 244, 244, 1);
+            background-color:rgb(238, 213, 213);
             color: black;
             font-weight: bold;
+            border-right:solid 1px white ;
+            border-bottom:solid 8px white;
+
         }
         tr{
         margin-bottom: 10px;
@@ -108,5 +137,23 @@ form{
     }
     p{
         font-size: 40px;
+    }
+}
+#MassTable{
+    th{
+        width: 14.28%;
+    }
+}
+.Table-header{
+    position: relative;
+    .btn1{
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+    }
+}
+#DetailsTable{
+    input{
+        cursor: pointer;
     }
 }
