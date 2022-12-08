@@ -7,10 +7,8 @@
 }
 @include media-breakpoint-up(xl){
 .mycontainer{
-    padding-top: 130px;
-    background-image: url('/assets/pictures/Bottom-sun-view.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
+   
+   
     padding-left: 15%;
     padding-right: 15%;
 }
@@ -157,3 +155,8 @@ form{
         cursor: pointer;
     }
 }
+// #background-img{
+//      background-image: url('/assets/pictures/Bottom-sun-view.png');
+//     background-repeat: no-repeat;
+    
+// }

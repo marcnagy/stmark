@@ -80,12 +80,16 @@ export class ReserveComponent implements OnInit {
       }
     }
     if(isSelected){
-      for(let i=0;i<allmasses.length;i++){
+      var isconfirm = confirm("are u sure u want to delete the selected reservations")
+      if(isconfirm){
+        for(let i=0;i<allmasses.length;i++){
       if(((document.getElementsByClassName("checkbox-delete")[i] as HTMLInputElement)?.checked)){
         console.log("true",i)
         this.masses.splice(i,1);
       }
       }
+      } 
+      
     }
     else{
       alert("please Select the wanted Masses to delete")
