@@ -9,7 +9,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     declarations:[
         HomeComponent,
         SliderComponent,
-        SliderAnnouncComponent
+        SliderAnnouncComponent,
+        
     ],
     imports: [
         CommonModule,

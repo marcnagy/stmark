@@ -1,19 +1,22 @@
-<div class="container-fluid">
+<div class="container-fluid" id="myheader">
     <div class="row">
         <div class="leftsection col-md-6">
             <div class="header-img "><img src="assets/pictures/eng-arab.png"></div>
             <div><img src="assets/pictures/internet2.png"></div>
-            <button *ngIf="!showBut"  class="btn1  " id="header-but" routerLink="/SignIn" >Sign in</button>
-            <div  class="Bolded-Text Username"  *ngIf="showBut" ><span class="icon-user-tie"></span> {{FirstName}}</div>
+            <button *ngIf="!showBut"    class="btn1 header-but" id="header-but" routerLink="/SignIn" >Sign in</button>
+            <button *ngIf="showBut" (click)="signout()"   class="btn1 header-but" id="header-but-out"  >Sign out</button>
+            <div class="Bolded-Text Username" *ngIf="showBut" ><span class="icon-user-tie"></span> {{FirstName}}</div>
         
         </div>
 
+        <!-- the function in only to set the name and refresh the page -->
     <div class="logosection col-md-6">
-        <div class="logoholder">
+        <div (click)="checkSignedin()" id="header-log" class="logoholder">
             <img class="church-logo "src="assets/pictures/site-logo.png" >
         </div>
     </div>
         
+    
 
 </div>
 </div>

@@ -1,6 +1,12 @@
 
 
+.addtheimg{
+    background-image: url('/assets/pictures/sunview-top.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
 
+}
 
 .Username{
     font-size: 24px;
@@ -13,7 +19,7 @@
 .header-img{
     margin-right:16px ;
 }
-#header-but{
+.header-but{
     margin-left:110px;
     min-width: 117px;
     border: black solid 0;
@@ -24,11 +30,9 @@
 .row{
    
     align-items: center;
-    padding: 112px 49px  112px 85px;
+    padding: 5.32% 2.55% 5.32% 4.42%
 }
-.container{
-    width: 100%;
-}
+
 .church-logo{
     position: absolute;
     right: 10%;

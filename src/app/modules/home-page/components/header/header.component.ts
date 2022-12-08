@@ -9,26 +9,36 @@ import { sign_inService } from 'src/app/modules/sign-in/services/person.service'
 })
 export class HeaderComponent implements OnInit {
   test:number=5;
-  constructor( private sign_inService1:sign_inService) { }
-  showBut:boolean=this.sign_inService1.Signedin;
-  FirstName :string =this.sign_inService1.firstName ;
+  
+  constructor( public sign_inService1:sign_inService ) { }
+  showBut:boolean | undefined;
+  FirstName :string | undefined ;
 
   ngOnInit(): void {
-    // while(true){
-    //   this.showBut=this.sign_inService1.Signedin;
 
-    // }
-  }
-   Alertmes():number{
-    console.log("OOpsie");
-return 76
-  }
+    const value =sessionStorage.getItem('isLogged')
+    console.log(value+"the value in session")
+    if (value !=null){
+      this.sign_inService1.Signedin=true
+      const rekt =sessionStorage.getItem('Username');
+      this.sign_inService1.firstName=rekt as string;
+      this.checkSignedin()
+    } 
+    else{
+      this.checkSignedin();
+    }
 
+  }
+ 
   checkSignedin(){
-    // if(this.showBut){
-    //   (document.getElementById("header-but")as HTMLInputElement).classList.add("SignedIn");
-    // }
+    this.showBut=this.sign_inService1.Signedin;
+    this.FirstName =this.sign_inService1.firstName ;
+  }
 
+  signout(){
+    sessionStorage.clear();
+    this.sign_inService1.Signedin=false;
+    this.ngOnInit();
   }
 
 

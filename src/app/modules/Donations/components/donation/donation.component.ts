@@ -14,6 +14,8 @@ export class DonationComponent implements OnInit {
   constructor(private myrouter:Router) { }
 
   ngOnInit(): void {
+    (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");
+
   }
 
   DisplayAmount(){

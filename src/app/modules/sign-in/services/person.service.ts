@@ -11,6 +11,7 @@ import { SigninModel } from '../models/signin';
 export class sign_inService {
 private url="SigninControllor";
   firstName:string='';
+  username:any;
   Signedin: boolean=false;
   constructor(private http:HttpClient) { }
   public getPerson(id:string,phonenumber:string):Observable<SigninModel>{
@@ -23,4 +24,11 @@ private url="SigninControllor";
     return this.http.get<SigninModel[]>(`${environment.apiUrl}/${this.url}`);
 
   }
+
+  //trial
+  refreshmypage(){
+  let element: HTMLElement = document.getElementById("header-log") as HTMLElement;
+  element.click();
 }
+  }
+  
