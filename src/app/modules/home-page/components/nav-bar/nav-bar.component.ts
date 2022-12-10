@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./_nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
 Alert(){
@@ -13,5 +13,7 @@ Alert(){
 
   ngOnInit(): void {
   }
-
+// addimg(){
+//   (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
+// }
 }

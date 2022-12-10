@@ -1,0 +1,47 @@
+
+
+.addtheimg{
+    background-image: url('/assets/pictures/sunview-top.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+
+}
+
+.Username{
+    font-size: 24px;
+    margin-left: 50px;
+}
+.leftsection{
+    display: flex ;
+    align-items: center;
+}
+.header-img{
+    margin-right:16px ;
+}
+.header-but{
+    margin-left:110px;
+    min-width: 117px;
+    border: black solid 0;
+}
+.SignedIn{
+    margin-left: 112px;
+}
+.row{
+   
+    align-items: center;
+    padding: 5.32% 2.55% 5.32% 4.42%
+}
+
+.church-logo{
+    position: absolute;
+    right: 10%;
+
+}
+.logoholder{
+    position: relative;
+}
+.logosection{
+    padding-bottom: 45px;
+}
+

@@ -1,6 +1,13 @@
 export class SigninModel{
-    nationalid:string=""
-    phonenumber:string="";
-    RemembermeFlag:string="true";
-    
+    constructor(){
+        this.firstName='';
+        this.id=''
+        this.phonenumber=''
+        this.RemembermeFlag=true
+    }
+    firstName:string='';
+    id:string='';
+    phonenumber:string='';
+    RemembermeFlag:boolean=false;
+   
 }

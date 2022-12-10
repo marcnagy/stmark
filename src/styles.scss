@@ -1,7 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import 'swiper/scss';
 @import 'assets/icons/style.scss';
+@import '/node_modules/bootstrap-scss/bootstrap.scss';
+
+//Functions
+@function rem($value,$base){
+    @if type-of($value)--"number"{
+        @return (calc($value/$base))*1rem;
+    }
+}
+
+// Variables
+$backround-main-color:white;
+$footer-background-color:#FFF3F0;
+$imp-reminder-slider-color:#FBF4F4;
+$nav-bar-color:#AF0E2C;
+$main-font-weight:bold;
+$main-font-size:20px;
 
 .btn1{
     height: 33px;
@@ -21,10 +35,11 @@
     font-weight: bold;
 }
 
-$backround-main-color:white;
-$footer-background-color:#FFF3F0;
-$imp-reminder-slider-color:#FBF4F4;
-$nav-bar-color:#AF0E2C;
+.form-control.ng-touched.ng-invalid{
+    border: solid 2px red;
+}
+.form-control.ng-touched.ng-valid{
+    border: solid 2px rgba(3, 175, 12, 0.801);
+}
 
-$main-font-weight:bold;
-$main-font-size:20px;
+

@@ -12,20 +12,13 @@ SwiperCore.use([Navigation, Pagination]);
 })
 export class SliderAnnouncComponent implements OnInit {
   swiperConfig2:any;
-
   constructor() { }
-
   ngOnInit(): void {
     this.swiperConfig2={
-      slidesPerView:3,
-      spaceBetween:30,
+      slidesPerView:2,  
+      spaceBetween:100,
       loop:true,
-      loopFillGroupWithBlank:true,
-
-      centeredSlides:true,
       clickable:true,
-    
-  
     }
   }
 

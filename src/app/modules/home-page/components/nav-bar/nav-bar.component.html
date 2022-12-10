@@ -5,17 +5,30 @@
               <a href="">Home</a>
             </li>
         <li class="nav-item">
-          <a href="">Holly Mass Reservation</a>
+          <a  routerLink="/reserve">Holly Mass Reservation</a>
         </li>
-        <li class="nav-item">
-          <a href="">Services</a>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+          <ul class="dropdown-menu drop-xd in-menu">
+            <li><a class="dropdown-item" href="" ><p>Confession</p> </a></li>
+            <li><a class="dropdown-item" href="" ><p>Donation</p> </a></li>
+          </ul>
+
         </li>
-        <li class="nav-item">
-          <a href="">Donation</a>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/donation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Donation</a>
+          <!-- <ul class="dropdown-menu drop-xd in-menu">
+            <li><a class="dropdown-item" href="" ><p>Confession</p> </a></li>
+            <li><a class="dropdown-item" href="" ><p>Donation</p> </a></li>
+            <li><a class="dropdown-item" href="" > <p>Holly Mass</p></a></li>
+          </ul> -->
         </li>
         <li class="nav-item">
           <a href="">About us</a> 
         </li>
+       
       </ul>
     </div>
   </nav>
+
+  
