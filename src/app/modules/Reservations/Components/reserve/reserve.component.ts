@@ -14,6 +14,7 @@ export class ReserveComponent implements OnInit {
   id:string="HolyMass";
   mass:HolyMass=new HolyMass;
   mass1:HolyMass=new HolyMass;
+  mass2:HolyMass=new HolyMass;
   loggedUser:string=this.myservice.firstName
 
   test:ConfessionData = new ConfessionData;
@@ -56,7 +57,7 @@ export class ReserveComponent implements OnInit {
   // this.oldConfessions.push(login.value);
   }
   GetMassData(login:any){
-    console.log(this.test);
+    console.log(this.mass2);
     // this.masses.push(login.value);
     }
 

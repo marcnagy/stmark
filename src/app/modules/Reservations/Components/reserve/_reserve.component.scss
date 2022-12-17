@@ -59,14 +59,14 @@ form{
 
 
 }
-    input{
+    .input{
         height: 82px;
         border-radius: 20px;
         margin-right: 20px;
         width: 32%;
         border: 1px solid rgba(156, 156, 156, 1);
         &::content{
-            padding: 22px 0 23px 20px;
+            padding: 12px 0 12px 20px;
             color: rgba(156, 156, 156, 1);
             font-weight: bold;
             font-size: 29px;
@@ -79,6 +79,12 @@ form{
         height: 68px;
         width: 206px;
         border-radius: 35px;
+    }
+    label{
+        display: block ;
+        margin-right: 20px;
+        font-size: 30px;
+        align-self: center;
     }
 }
 #Mass-form{
@@ -155,6 +161,7 @@ form{
         cursor: pointer;
     }
 }
+
 // #background-img{
 //      background-image: url('/assets/pictures/Bottom-sun-view.png');
 //     background-repeat: no-repeat;

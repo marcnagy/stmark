@@ -6,6 +6,7 @@ export class HolyMass{
     prayer:string|undefined;
     place:string|undefined;
     altar:string|undefined;
+    TimeSlot:string|undefined;
     starttime:string|undefined;
     endtime:string|undefined;
     AvailablePlaces:number|undefined;
