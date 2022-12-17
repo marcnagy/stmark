@@ -14,7 +14,9 @@ export class ReserveComponent implements OnInit {
   id:string="HolyMass";
   mass:HolyMass=new HolyMass;
   mass1:HolyMass=new HolyMass;
+  mass2:HolyMass=new HolyMass;
   loggedUser:string=this.myservice.firstName
+  fathers:string[]=[];
 
   test:ConfessionData = new ConfessionData;
   oldConfessions:ConfessionData[]=[];
@@ -27,7 +29,11 @@ export class ReserveComponent implements OnInit {
   ngOnInit(): void {
     (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
     (document.getElementById(this.id) as HTMLInputElement).classList.add("active");
-    
+  this.fathers.push("Philo")
+  this.fathers.push("Youhanna")
+  this.fathers.push("boules")
+  this.fathers.push("moussa")
+
 
    this.mass.day="26/10/2022";
    this.mass.prayer="mass";
@@ -52,12 +58,23 @@ export class ReserveComponent implements OnInit {
 
   }
   GetConfessionData(login:any){
-  console.log(this.test);
-  // this.oldConfessions.push(login.value);
+    if(this.test.Fathername ==null || this.test.ConfessionDay ==null){
+      alert("please choose all the fileds")
+    }
+    else{
+        console.log(this.test);
+
+    }
+
   }
   GetMassData(login:any){
-    console.log(this.test);
-    // this.masses.push(login.value);
+    if(this.mass2.place==null || this.mass2.TimeSlot==null || this.mass2.day==null){
+      alert("please choose al the fields")
+    }
+    else{
+          console.log(this.mass2);
+
+    }
     }
 
   ChangeTab( id:any){

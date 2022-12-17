@@ -29,6 +29,10 @@ export class HeaderComponent implements OnInit {
     }
 
   }
+  remove(){
+    (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");
+
+  }
  
   checkSignedin(){
     this.showBut=this.sign_inService1.Signedin;

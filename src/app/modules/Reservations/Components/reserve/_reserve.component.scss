@@ -49,9 +49,10 @@ form{
     padding:52px 0;
     border: 1px black none;
     box-shadow: 4px 4px 38px -7px rgba(0, 0, 0, 0.25);
-    margin-bottom: 253px;
+    margin-bottom: 153px;
     background-color: white;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
 .Form-inputs{
     display: flex;
     justify-content: center;
@@ -59,14 +60,14 @@ form{
 
 
 }
-    input{
+    .input{
         height: 82px;
         border-radius: 20px;
         margin-right: 20px;
         width: 32%;
         border: 1px solid rgba(156, 156, 156, 1);
         &::content{
-            padding: 22px 0 23px 20px;
+            padding: 12px 0 12px 20px;
             color: rgba(156, 156, 156, 1);
             font-weight: bold;
             font-size: 29px;
@@ -79,6 +80,12 @@ form{
         height: 68px;
         width: 206px;
         border-radius: 35px;
+    }
+    label{
+        display: block ;
+        margin-right: 20px;
+        font-size: 30px;
+        align-self: center;
     }
 }
 #Mass-form{
@@ -155,6 +162,7 @@ form{
         cursor: pointer;
     }
 }
+
 // #background-img{
 //      background-image: url('/assets/pictures/Bottom-sun-view.png');
 //     background-repeat: no-repeat;
