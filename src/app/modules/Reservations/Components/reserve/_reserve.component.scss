@@ -51,7 +51,8 @@ form{
     box-shadow: 4px 4px 38px -7px rgba(0, 0, 0, 0.25);
     margin-bottom: 253px;
     background-color: white;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
 .Form-inputs{
     display: flex;
     justify-content: center;
