@@ -103,9 +103,7 @@
                 <div class="Form-inputs form-group">
                     <label for="fathername">Father:</label>
                     <select class="Form-inputs input" name="fathername" [(ngModel)]="test.Fathername" id="fathername">
-                        <option value="kirolous">kirolous</option>
-                        <option value="Youssef">Youssef</option>
-                        <option value="Moussa">Moussa</option>
+                        <option *ngFor="let onefather of fathers" value="{{onefather}}">{{onefather}}</option>
                     </select>
 
                     <label for="MassDate">Date:</label>

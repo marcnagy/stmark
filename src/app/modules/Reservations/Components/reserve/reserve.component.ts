@@ -16,6 +16,7 @@ export class ReserveComponent implements OnInit {
   mass1:HolyMass=new HolyMass;
   mass2:HolyMass=new HolyMass;
   loggedUser:string=this.myservice.firstName
+  fathers:string[]=[];
 
   test:ConfessionData = new ConfessionData;
   oldConfessions:ConfessionData[]=[];
@@ -28,7 +29,11 @@ export class ReserveComponent implements OnInit {
   ngOnInit(): void {
     (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
     (document.getElementById(this.id) as HTMLInputElement).classList.add("active");
-    
+  this.fathers.push("Philo")
+  this.fathers.push("Youhanna")
+  this.fathers.push("boules")
+  this.fathers.push("moussa")
+
 
    this.mass.day="26/10/2022";
    this.mass.prayer="mass";
