@@ -15,11 +15,15 @@ private url="holymassControllor";
 private url1="holymassreservationControllor";
   constructor(private http:HttpClient) { }
   
-  public getHolyMass():Observable<HolyMass[]>{
+  public getTime():Observable<string[]>{
   
-    return this.http.get<HolyMass[]>(`${environment.apiUrl}/${this.url}`);
+    return this.http.get<string[]>(`${environment.apiUrl}/${this.url}`);
   }
 
+  public getLocation():Observable<string[]>{
+  
+    return this.http.put<string[]>(`${environment.apiUrl}/${this.url}`," ");
+  }
 
   public getHolyMassReservation(personID:string):Observable<HolyMassReservation[]>{
   
@@ -47,13 +51,16 @@ private url1="holymassreservationControllor";
      this.http.put<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${end}`, 'Angular PUT Request Example' );
 
   }
-  public GetHolyMassID(location:string,start:string,end:string){
-    this.http.get<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${end}`);
+  public GetHolyMass(location:string,start:string,date:string){
+    this.http.get<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${date}`);
 
  }
   public DeleteReservation(id:string,date:string):Observable<HolyMassReservation[]>{
     return this.http
     .delete<HolyMassReservation[]>(`${environment.apiUrl}/${this.url1}/${id},${date}`);
   }
-  
+  public DeleteMass(location:string,start:string,date:string):Observable<HolyMass[]>{
+    return this.http
+    .delete<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${date}`);
+  }
 }
