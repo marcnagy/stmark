@@ -13,20 +13,16 @@
             <form id="Mass-form" (ngSubmit)="GetMassData(login)" #login="ngForm">
                 <div class="Form-inputs form-group">
                     <label for="MassDate">Date:</label>
-                    <input required class="form-control input" name="MassDate" [(ngModel)]="mass2.day" type="date" >
+                    <input required class="form-control input" name="MassDate" [(ngModel)]="mass2.date" type="date" >
 
-                    <label for="TimeSlots">TimeSlot: </label>
-                    <select class="Form-inputs input" name="TimeSlots" [(ngModel)]="mass2.TimeSlot" id="Timeslots" placeholder="TimeSlot">
-                        <option selected value="FirstMass">FirstMass</option>
-                        <option value="SecondMass">SecondMass</option>
-                        <option value="1-to-3Mass">Abu-seifeen</option>
+                    <label for="TimeSlots">Time: </label>
+                    <select class="Form-inputs input" name="TimeSlots" [(ngModel)]="mass2.startTime" id="Timeslots" placeholder="TimeSlot">
+                        <option *ngFor="let startime of startimes" value="{{startime}}">{{startime}}</option>
                     </select>
 
                     <label for="places">Place:</label>
-                    <select class="Form-inputs input" name="places" [(ngModel)]="mass2.place" id="places" placeholder="Place">
-                        <option value="stmark-altar">stmark-altar</option>
-                        <option value="youssefelnaggar">youssefelnaggar</option>
-                        <option value="Abu-seifeen">Abu-seifeen</option>
+                    <select class="Form-inputs input" name="places" [(ngModel)]="mass2.location" id="places" placeholder="Place">
+                        <option *ngFor="let location of locations" value="{{location}}">{{location}}</option>
                     </select>
 
                 </div>
@@ -50,13 +46,12 @@
                         <th>Available seats</th>
                     </tr>
                     <tr *ngFor="let mass of masses ">
-                        <td> {{mass.day}}</td>
+                        <td> {{mass.date}}</td>
                         <td> {{mass.prayer}}</td>
-                        <td> {{mass.place +" / " + mass.altar}}</td>
-                        <!-- <td> {{mass.altar}}</td> -->
-                        <td> {{mass.starttime}}</td>
+                        <td> {{mass.location }}</td>
+                        <td> {{mass.startTime}}</td>
                         <td> {{mass.endtime}}</td>
-                        <td> {{mass.AvailablePlaces}}</td>
+                        <td> {{mass.capacity}}</td>
 
                     </tr>
                 </table>
@@ -83,10 +78,10 @@
                     <tr *ngFor="let mass of masses ">
                         <!-- <td> {{loggedUser}}</td> -->
                         <!-- <td>Youssef</td> -->
-                        <td> {{mass.day}}</td>
+                        <td> {{mass.date}}</td>
                         <td> {{mass.prayer}}</td>
-                        <td> {{mass.place +" / "+ mass.altar}}</td>
-                        <td> {{mass.starttime}}</td>
+                        <td> {{mass.location}}</td>
+                        <td> {{mass.startTime}}</td>
                         <td> {{mass.endtime}}</td>
                         <!-- <td> {{mass.AvailablePlaces}}</td> -->
                         <td> <input class="checkbox-delete" type="checkbox"></td>
@@ -105,7 +100,6 @@
                     <select class="Form-inputs input" name="fathername" [(ngModel)]="test.Fathername" id="fathername">
                         <option *ngFor="let onefather of fathers" value="{{onefather}}">{{onefather}}</option>
                     </select>
-
                     <label for="MassDate">Date:</label>
                     <input required class="form-control input" name="MassDate" [(ngModel)]="test.ConfessionDay" type="date" >                 
                 </div>

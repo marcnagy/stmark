@@ -2,14 +2,12 @@ import { Time } from "@angular/common";
 
 export class HolyMass{
     Name?:string
-    day:string|undefined;
+    date:string|undefined; //the date used in reserve
     prayer:string|undefined;
-    place:string|undefined;
-    altar:string|undefined;
-    TimeSlot:string|undefined;
-    starttime:string|undefined;
+    location:string|undefined; //the place used in reserve
+    startTime:string|undefined; //the starttimr used in reserve
     endtime:string|undefined;
-    AvailablePlaces:number|undefined;
+    capacity:number|undefined;
     cancellation?:boolean;
 
     // date:string|undefined;
