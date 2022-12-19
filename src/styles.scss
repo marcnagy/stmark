@@ -3,11 +3,26 @@
 @import '/node_modules/bootstrap-scss/bootstrap.scss';
 
 //Functions
-@function rem($value,$base){
-    @if type-of($value)--"number"{
-        @return (calc($value/$base))*1rem;
-    }
-}
+// @function rem($value,$base){
+//     @if type-of($value)--"number"{
+//         @return (calc($value/$base))*1rem;
+//     }
+// }
+// html{
+//     font-size: 12px;
+// }
+
+// @include media-breakpoint-up(md){
+//     html{
+//         font-size: 22px;
+//     }
+// }
+// @include media-breakpoint-up(lg){
+//     html{
+//         font-size: 28px;
+//     }
+// }
+
 
 // Variables
 $backround-main-color:white;
