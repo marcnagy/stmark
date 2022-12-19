@@ -21,6 +21,8 @@ export class ReserveComponent implements OnInit {
   test:ConfessionData = new ConfessionData;
   oldConfessions:ConfessionData[]=[];
   masses:HolyMass[]=[];
+  startimes:string[]=[];
+  locations:string[]=[];
   
 
 
@@ -34,22 +36,31 @@ export class ReserveComponent implements OnInit {
   this.fathers.push("boules")
   this.fathers.push("moussa")
 
+  this.startimes.push("8:00");
+  this.startimes.push("10:00");
+  this.startimes.push("tasbe7et kyahk")
 
-   this.mass.day="26/10/2022";
+  this.locations.push("Marimor2os / Virgin Mary")
+  this.locations.push("Youssef el NAggar / Marigerges")
+  this.locations.push("Anba Wanas/anba wanas")
+
+
+
+
+
+   this.mass.date="26/10/2022";
    this.mass.prayer="mass";
-   this.mass.place="main";
-   this.mass.starttime='07:30';
-   this.mass.altar="virgin Mary"
+   this.mass.location="main/virgin Mary";
+   this.mass.startTime='07:30';
    this.mass.endtime="10:30";
-   this.mass.AvailablePlaces=195;
+   this.mass.capacity=195;
 
-   this.mass1.day="30/10/2022";
+   this.mass1.date="30/10/2022";
    this.mass1.prayer="mass";
-   this.mass1.place="new bld";
-   this.mass1.altar="youssefNagar"
-   this.mass1.starttime='09:30';
+   this.mass1.location="new bld / Youssef El Naggar";
+   this.mass1.startTime='09:30';
    this.mass1.endtime="11:30";
-   this.mass1.AvailablePlaces=356;
+   this.mass1.capacity=356;
 
    this.masses.push(this.mass);
    this.masses.push(this.mass1);
@@ -68,7 +79,7 @@ export class ReserveComponent implements OnInit {
 
   }
   GetMassData(login:any){
-    if(this.mass2.place==null || this.mass2.TimeSlot==null || this.mass2.day==null){
+    if(this.mass2.location==null || this.mass2.startTime==null || this.mass2.date==null){
       alert("please choose al the fields")
     }
     else{
