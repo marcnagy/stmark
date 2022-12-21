@@ -11,6 +11,8 @@ import { ConfessionData } from '../models/Confession';
 export class ConfessionService {
   private Signedin :boolean =false;
 private url="ConfessionreservationControllor";
+private url1="ConfessionControllor";
+
   constructor(private http:HttpClient) { }
   public getConfessionByFather(fatherName:string):Observable<ConfessionData[]>{
   
@@ -18,12 +20,23 @@ private url="ConfessionreservationControllor";
   }
   public getConfession(personID:string):Observable<ConfessionData[]>{
   
-    return this.http.get<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${personID}`);
+    return this.http.put<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${personID}`," ");
 
   }
-  public addConfession(user:ConfessionData):Observable<ConfessionData[]>{
+  public getFather():Observable<ConfessionData[]>{
+  
+    return this.http.get<ConfessionData[]>(`${environment.apiUrl}/${this.url}`);
+
+  }
+  public addConfession(personID:string, date:string,fatherName:string):Observable<ConfessionData[]>{
     return this.http
-    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url}`,user);
+    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${personID},${date}/${fatherName}`,"");
+  }
+
+
+  public createConfession(personID:string, date:string,fatherName:string):Observable<ConfessionData[]>{
+    return this.http
+    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url1}/${date}/${fatherName}`,"");
   }
   public DeleteConfession(id:string,date:string):Observable<ConfessionData[]>{
     return this.http

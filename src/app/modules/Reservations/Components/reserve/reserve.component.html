@@ -38,7 +38,6 @@
                 <table>
                     <tr>
                         <th>Day</th>
-                        <th>Prayer</th>
                         <th>Place / Altar</th>
                         <!-- <th>Altar</th> -->
                         <th>Start Time</th>
@@ -47,10 +46,9 @@
                     </tr>
                     <tr *ngFor="let mass of masses ">
                         <td> {{mass.date}}</td>
-                        <td> {{mass.prayer}}</td>
                         <td> {{mass.location }}</td>
                         <td> {{mass.startTime}}</td>
-                        <td> {{mass.endtime}}</td>
+                        <td> {{mass.endTime}}</td>
                         <td> {{mass.capacity}}</td>
 
                     </tr>
@@ -67,7 +65,6 @@
                     <tr>
                         <!-- <th>Name</th> -->
                         <th>Day</th>
-                        <th>Prayer</th>
                         <th>Place / altar</th>
                         <!-- <th>altar</th> -->
                         <th>Start Time</th>
@@ -75,14 +72,13 @@
                         <th>Cancellation</th>
                         <th>Qr Code</th>
                     </tr>
-                    <tr *ngFor="let mass of masses ">
+                    <tr *ngFor="let mass of resMasses ">
                         <!-- <td> {{loggedUser}}</td> -->
                         <!-- <td>Youssef</td> -->
                         <td> {{mass.date}}</td>
-                        <td> {{mass.prayer}}</td>
                         <td> {{mass.location}}</td>
                         <td> {{mass.startTime}}</td>
-                        <td> {{mass.endtime}}</td>
+                        <td> {{mass.endTime}}</td>
                         <!-- <td> {{mass.AvailablePlaces}}</td> -->
                         <td> <input class="checkbox-delete" type="checkbox"></td>
                         <td><button class="btn1">Print</button></td>
@@ -97,11 +93,11 @@
             <form (ngSubmit)="GetConfessionData(login)" #login="ngForm">
                 <div class="Form-inputs form-group">
                     <label for="fathername">Father:</label>
-                    <select class="Form-inputs input" name="fathername" [(ngModel)]="test.Fathername" id="fathername">
+                    <select class="Form-inputs input" name="fathername" [(ngModel)]="test.fatherName" id="fathername">
                         <option *ngFor="let onefather of fathers" value="{{onefather}}">{{onefather}}</option>
                     </select>
                     <label for="MassDate">Date:</label>
-                    <input required class="form-control input" name="MassDate" [(ngModel)]="test.ConfessionDay" type="date" >                 
+                    <input required class="form-control input" name="MassDate" [(ngModel)]="test.date" type="date" >                 
                 </div>
                 <button class="btn1"> Reserve</button>
             </form>
@@ -116,11 +112,10 @@
                     <tr>
                         <th>Father</th>
                         <th>Day</th>
-                        <th>timeslot</th>
                     </tr>
                     <tr *ngFor="let current of oldConfessions ">
-                        <td> {{current.Fathername}}</td>
-                        <td> {{current.ConfessionDay}}</td>
+                        <td> {{current.fatherName}}</td>
+                        <td> {{current.date}}</td>
                     </tr>
                 </table>
             </div>

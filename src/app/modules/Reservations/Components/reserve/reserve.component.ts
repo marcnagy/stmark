@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
 import { ConfessionData } from '../../models/Confession';
 import { HolyMass } from '../../models/HolyMass';
+import { HolyMassReservation } from '../../models/HolyMassReservation';
+import { ConfessionService } from '../../services/Confession.service';
+import { HolyMassService } from '../../services/HolyMass.service';
 
 @Component({
   selector: 'app-reserve',
@@ -21,72 +24,93 @@ export class ReserveComponent implements OnInit {
   test:ConfessionData = new ConfessionData;
   oldConfessions:ConfessionData[]=[];
   masses:HolyMass[]=[];
+  resMasses:HolyMass[]=[];
+  resConf:ConfessionData[]=[];
   startimes:string[]=[];
   locations:string[]=[];
-  
+   user:ConfessionData=new ConfessionData;
+  user2:HolyMassReservation=new HolyMassReservation;
 
-
-  constructor(private myservice:sign_inService) { }
+  constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
 
   ngOnInit(): void {
+    this.holyMassService.getTime().subscribe( (person)=>{
+      for(let i=0;i<person.length;i++){
+        this.startimes.push(person[i].startTime)
+      }
+     });
+     this.holyMassService.getLocation().subscribe( (person)=>{
+      for(let i=0;i<person.length;i++){
+        this.locations.push(person[i].location)
+      }
+     });
+    this.holyMassService.GetHolyMass("all","all","all ").subscribe( (person:HolyMass[])=>{
+      for(let i=0;i<person.length;i++){
+        this.masses.push(person[i])
+      }
+     });
+     
+     this.holyMassService.getHolyMassReservation(this.myservice.id).subscribe( (person:HolyMassReservation[])=>{
+      for(let i=0;i<person.length;i++){
+        for(let j=0;j<this.masses.length;j++){
+          if(person[i].holyMassID==this.masses[j].holyMassID)
+        {  this.resMasses.push(this.masses[j]);
+          console.log(this.masses[j]) ;
+          break}
+      }
+     }
+    });
+ 
+     this.confessionService.getConfession(this.myservice.id).subscribe( (person)=>{
+      for(let i=0;i<person.length;i++){
+                this.oldConfessions.push(person[i]);
+                console.log(person[i])
+                
+      }
+     });
+   
     (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
     (document.getElementById(this.id) as HTMLInputElement).classList.add("active");
-  this.fathers.push("Philo")
-  this.fathers.push("Youhanna")
-  this.fathers.push("boules")
-  this.fathers.push("moussa")
 
-  this.startimes.push("8:00");
-  this.startimes.push("10:00");
-  this.startimes.push("tasbe7et kyahk")
-
-  this.locations.push("Marimor2os / Virgin Mary")
-  this.locations.push("Youssef el NAggar / Marigerges")
-  this.locations.push("Anba Wanas/anba wanas")
-
-
-
-
-
-   this.mass.date="26/10/2022";
-   this.mass.prayer="mass";
-   this.mass.location="main/virgin Mary";
-   this.mass.startTime='07:30';
-   this.mass.endtime="10:30";
-   this.mass.capacity=195;
-
-   this.mass1.date="30/10/2022";
-   this.mass1.prayer="mass";
-   this.mass1.location="new bld / Youssef El Naggar";
-   this.mass1.startTime='09:30';
-   this.mass1.endtime="11:30";
-   this.mass1.capacity=356;
-
-   this.masses.push(this.mass);
-   this.masses.push(this.mass1);
+  
+   
 
 
 
   }
   GetConfessionData(login:any){
-    if(this.test.Fathername ==null || this.test.ConfessionDay ==null){
-      alert("please choose all the fileds")
-    }
+    if(this.test.fatherName==''||this.test.date==''){alert("please pick all data");}
     else{
-        console.log(this.test);
-
-    }
-
+      this.confessionService.addConfession(this.myservice.id,this.test.fatherName,this.test.date).subscribe((person)=>{
+    alert("confession reserved successfully");
+    this.oldConfessions.push(person[0]);
+   });}
+   
   }
   GetMassData(login:any){
-    if(this.mass2.location==null || this.mass2.startTime==null || this.mass2.date==null){
-      alert("please choose al the fields")
-    }
+    if(this.mass2.date==''||this.mass2.location==' '||this.mass2.startTime==' '){alert("please pick all data");}
     else{
-          console.log(this.mass2);
-
+for(let i=0;i<this.masses.length;i++){
+    if(this.masses[i].date==this.mass2.date&&this.masses[i].startTime==this.mass2.startTime&&this.masses[i].location==this.mass2.location)
+    {this.user2.holyMassID=this.masses[i].holyMassID;
+      this.mass2.endTime=this.masses[i].endTime;
+      this.masses[i].capacity-=1;
+      this.resMasses.push(this.masses[i]);
     }
-    }
+   }
+   this.user2.date=this.mass2.date;
+   this.user2.personID=this.myservice.id;
+if(this.user2.holyMassID==0){
+alert("unavailable hollymass, please choose an available hollymass")
+}
+else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>{
+  alert("reserved successful");
+ },
+ (error) =>alert("unavailable holly mass please choose a valid one using data in the upcoming table"));  
+ this.holyMassService.Decrease(this.mass2.location,this.mass2.startTime,this.mass2.endTime).subscribe();
+}
+  }
+}
 
   ChangeTab( id:any){
     (document.getElementById("Confession") as HTMLInputElement).classList.remove("active");
@@ -112,8 +136,10 @@ export class ReserveComponent implements OnInit {
       if(isconfirm){
         for(let i=0;i<allmasses.length;i++){
       if(((document.getElementsByClassName("checkbox-delete")[i] as HTMLInputElement)?.checked)){
-        console.log("true",i)
-        this.masses.splice(i,1);
+        
+        this.holyMassService.DeleteReservation(this.myservice.id,this.masses[i].date).subscribe(()=>{this.resMasses.splice(i,1);
+          this.masses[i].capacity+=1;});
+       
       }
       }
       } 
