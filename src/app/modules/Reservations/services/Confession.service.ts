@@ -25,22 +25,22 @@ private url1="ConfessionControllor";
   }
   public getFather():Observable<ConfessionData[]>{
   
-    return this.http.get<ConfessionData[]>(`${environment.apiUrl}/${this.url}`);
+    return this.http.get<ConfessionData[]>(`${environment.apiUrl}/${this.url1}`);
 
   }
   public addConfession(personID:string, date:string,fatherName:string):Observable<ConfessionData[]>{
     return this.http
-    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${personID},${date}/${fatherName}`,"");
+    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${personID},${date},${fatherName}`,'');
   }
 
 
-  public createConfession(personID:string, date:string,fatherName:string):Observable<ConfessionData[]>{
+  public createConfession(fatherName:string):Observable<ConfessionData[]>{
     return this.http
-    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url1}/${date}/${fatherName}`,"");
+    .post<ConfessionData[]>(`${environment.apiUrl}/${this.url1}/${fatherName}`,"");
   }
-  public DeleteConfession(id:string,date:string):Observable<ConfessionData[]>{
+  public DeleteConfession(fatherName:string):Observable<ConfessionData[]>{
     return this.http
-    .delete<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${id},${date}`);
+    .delete<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${fatherName}`);
   }
   
 }

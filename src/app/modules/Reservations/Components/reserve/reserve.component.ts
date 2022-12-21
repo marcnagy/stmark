@@ -68,6 +68,13 @@ export class ReserveComponent implements OnInit {
                 
       }
      });
+     this.confessionService.getFather().subscribe( (person)=>{
+      for(let i=0;i<person.length;i++){
+                this.fathers.push(person[i].fatherName);
+                console.log(person[i])
+                
+      }
+     });
    
     (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
     (document.getElementById(this.id) as HTMLInputElement).classList.add("active");
@@ -81,9 +88,9 @@ export class ReserveComponent implements OnInit {
   GetConfessionData(login:any){
     if(this.test.fatherName==''||this.test.date==''){alert("please pick all data");}
     else{
-      this.confessionService.addConfession(this.myservice.id,this.test.fatherName,this.test.date).subscribe((person)=>{
+      this.confessionService.addConfession(this.myservice.id,this.test.date,this.test.fatherName).subscribe((person)=>{
     alert("confession reserved successfully");
-    this.oldConfessions.push(person[0]);
+    this.oldConfessions.push(this.test);
    });}
    
   }
@@ -101,12 +108,13 @@ for(let i=0;i<this.masses.length;i++){
    this.user2.date=this.mass2.date;
    this.user2.personID=this.myservice.id;
 if(this.user2.holyMassID==0){
-alert("unavailable hollymass, please choose an available hollymass")
+alert("unavailable holly mass please choose a valid one using data in the upcoming table")
 }
 else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>{
   alert("reserved successful");
  },
- (error) =>alert("unavailable holly mass please choose a valid one using data in the upcoming table"));  
+ (error) =>{alert("hollyMass already reserved");
+ this.resMasses.pop()});  
  this.holyMassService.Decrease(this.mass2.location,this.mass2.startTime,this.mass2.endTime).subscribe();
 }
   }
@@ -136,9 +144,9 @@ else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>
       if(isconfirm){
         for(let i=0;i<allmasses.length;i++){
       if(((document.getElementsByClassName("checkbox-delete")[i] as HTMLInputElement)?.checked)){
-        
-        this.holyMassService.DeleteReservation(this.myservice.id,this.masses[i].date).subscribe(()=>{this.resMasses.splice(i,1);
-          this.masses[i].capacity+=1;});
+        this.holyMassService.DeleteReservation(this.myservice.id,this.resMasses[i].date).subscribe(()=>{this.resMasses.splice(i,1);
+          this.masses[i].capacity+=1;
+        alert("reservation canceled")});
        
       }
       }
