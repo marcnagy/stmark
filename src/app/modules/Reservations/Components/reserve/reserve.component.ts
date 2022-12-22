@@ -42,7 +42,7 @@ export class ReserveComponent implements OnInit {
 
   this.locations.push("Marimor2os / Virgin Mary")
   this.locations.push("Youssef el NAggar / Marigerges")
-  this.locations.push("Anba Wanas/anba wanas")
+  this.locations.push("Anba Wanas/anba")
 
 
 
