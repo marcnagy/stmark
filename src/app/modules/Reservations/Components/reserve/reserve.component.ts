@@ -146,6 +146,7 @@ else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>
       if(((document.getElementsByClassName("checkbox-delete")[i] as HTMLInputElement)?.checked)){
         this.holyMassService.DeleteReservation(this.myservice.id,this.resMasses[i].date).subscribe(()=>{this.resMasses.splice(i,1);
           this.masses[i].capacity+=1;
+ this.holyMassService.Increase(this.resMasses[i].location,this.resMasses[i].startTime,this.resMasses[i].endTime).subscribe();
         alert("reservation canceled")});
        
       }
