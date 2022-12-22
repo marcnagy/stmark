@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
+  aboutus:string="بتنيىلقنثىرثنىرنثتى رىتنىقتن بهثقنىبلنثقىلق صثىبتنقثصىلبنتثق ن ثىهبهنخثمىقمثل برىثمقنختتىلبثقنهلر ىبلثهنتقلىهنقثل بثقتنىلثتنمقللاى تثقنلى  نلبرى ثقنتلىثقتنملى"
   constructor() { }
 
   ngOnInit(): void {

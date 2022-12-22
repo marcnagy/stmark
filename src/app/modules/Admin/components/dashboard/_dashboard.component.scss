@@ -1,0 +1,81 @@
+.Admin-container{
+    padding: 200px 19.16% ;
+    .Header1{
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    .FullAdminForm{
+        padding: 50px 0;
+        border-radius: 20px;
+        box-shadow: 4px 4px 38px -7px rgba(0, 0, 0, 0.25);
+        position: relative;
+        margin-bottom: 80px; 
+        .btn1{
+        position: absolute;
+        right: 100px;
+        bottom: -35px;
+        width: 206px;
+        border-radius: 35px;
+        height: 68px;
+    }
+    }
+   
+    .adminform{
+        display:flex;
+        margin-bottom: 10px;
+        margin: 0 20px;
+        input{
+    width: 20%;
+    height: 82px;
+    border-radius: 20px;
+    margin: 0 5px;
+    &::content{
+    text-align: center;
+    }
+
+}
+    }
+    .ConfessionForm{
+        box-shadow: 4px 4px 38px -7px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        position: relative;
+
+        .confessionformholder{
+            display: flex;
+            align-items: center;
+            p{
+                margin: 0;
+            }
+            margin: 0 20px;
+        }
+        input{
+            width: 48%;
+            height: 65px;
+            border-radius: 20px;
+            &::content{
+                text-align: center;
+                }
+            
+        }
+        #fatherlabel{
+            font-size: 30px;
+            margin: 75px 50px;
+        }
+        .button-holder{
+            position: absolute;
+            bottom: -35px;
+            left: 28%;
+            .btn1{
+                margin: 0 20px;
+                width: 206px;
+                border-radius: 35px;
+                height: 68px;
+            }
+        }
+    }
+    
+   
+    
+
+}
+
