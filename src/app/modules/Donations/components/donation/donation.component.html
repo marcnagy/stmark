@@ -66,8 +66,8 @@
     </form>
 </div>
 
-<div>
-    <p class="hidden">
+<div *ngIf="!loggedin">
+    <p class="unAuthorized">
         YOU NEED TO SIGN IN
     </p>
 </div>

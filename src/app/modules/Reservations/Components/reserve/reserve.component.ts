@@ -81,9 +81,12 @@ export class ReserveComponent implements OnInit {
       }
      });
    
-    (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
+     if(this.loggedin){
+      (document.getElementById("myheader") as HTMLInputElement).classList.add("addtheimg");
     (document.getElementById(this.id) as HTMLInputElement).classList.add("active");
 
+     }
+    
   
    
 

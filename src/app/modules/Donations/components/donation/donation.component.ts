@@ -18,7 +18,6 @@ export class DonationComponent implements OnInit {
 
   ngOnInit(): void {
     (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");
-
   }
 
   DisplayAmount(){
