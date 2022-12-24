@@ -60,7 +60,7 @@ export class ReserveComponent implements OnInit {
         for(let j=0;j<this.masses.length;j++){
           if(person[i].holyMassID==this.masses[j].holyMassID)
         {  this.resMasses.push(this.masses[j]);
-          console.log(this.masses[j]) ;
+         
           break}
       }
      }
@@ -69,14 +69,14 @@ export class ReserveComponent implements OnInit {
      this.confessionService.getConfession(this.myservice.id).subscribe( (person)=>{
       for(let i=0;i<person.length;i++){
                 this.oldConfessions.push(person[i]);
-                console.log(person[i])
+                
                 
       }
      });
      this.confessionService.getFather().subscribe( (person)=>{
       for(let i=0;i<person.length;i++){
                 this.fathers.push(person[i].fatherName);
-                console.log(person[i])
+                
                 
       }
      });
@@ -141,7 +141,6 @@ else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>
   CancelReservation(){
     var isSelected:boolean=false;
     var allmasses=(document.getElementsByClassName("checkbox-delete"))
-    console.log(allmasses)
     for(let i=0;i<allmasses.length;i++){
       if(((document.getElementsByClassName("checkbox-delete")[i] as HTMLInputElement).checked)==true){
       isSelected=true;

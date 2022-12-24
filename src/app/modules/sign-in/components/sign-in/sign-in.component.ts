@@ -17,37 +17,33 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void { 
    }
-   checkForAdmin(){
-    //implement here
-    return this.sign_inService1.isAdmin
-   }
+   
 
   submit(login:any){
-    if(!this.checkForAdmin()){
       this.SigninData=login.value;
     this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe( (person)=>{
                          alert("login Successfully");
-                       this.myrouter.navigate(['']);     
+                      if(person.firstName=="admin") { 
+                        this.sign_inService1.isAdmin=true;
+                      this.myrouter.navigate(['Admin']);
+                      this.sign_inService1.firstName="Admin";
+                      sessionStorage.setItem('isLogged',"true");
+                      sessionStorage.setItem('Username',"Admin");   }
+                    else{this.myrouter.navigate(['']);     
                        this.sign_inService1.Signedin=true;  
                        console.log(person.firstName)  ;
                        this.sign_inService1.firstName=person.firstName;
                        this.sign_inService1.id=person.id;
                        this.sign_inService1.refreshmypage()
                        sessionStorage.setItem('isLogged',"true")
-                       sessionStorage.setItem('Username',person.firstName)         
+                       sessionStorage.setItem('Username',person.firstName)  }         
          },
          (error) =>alert("id or phone number is incorrect")
        );
-    }
-    else{
-      this.myrouter.navigate(['Admin'])
-      this.sign_inService1.firstName="Admin";
-      sessionStorage.setItem('isLogged',"true")
-      sessionStorage.setItem('Username',"Admin")         
+           
     }
     
     
-      }
     //   reloadCurrentRoute() {
     //     let currentUrl = this.myrouter.url;
     //     this.myrouter.navigateByUrl('/', {skipLocationChange: true}).then(() => {
