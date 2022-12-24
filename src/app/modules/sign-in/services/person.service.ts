@@ -10,6 +10,7 @@ import { SigninModel } from '../models/signin';
 })
 export class sign_inService {
 private url="SigninControllor";
+  isAdmin:boolean=false;
   firstName:string='';
   id:string='';
   username:any;

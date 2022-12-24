@@ -1,4 +1,4 @@
-<div class="mycontainer">
+<div class="mycontainer" *ngIf="loggedin">
     <div class="donation-title Bolded-Text">
         Where would you like to
         give ?
@@ -64,4 +64,10 @@
         </div>
         <button class="donatebut btn1"   type="submit" >Donate</button>
     </form>
+</div>
+
+<div>
+    <p class="hidden">
+        YOU NEED TO SIGN IN
+    </p>
 </div>

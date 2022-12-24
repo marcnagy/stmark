@@ -1,28 +1,58 @@
-<div class="Admin-container">
+<div class="Admin-container" *ngIf="isAdmin">
+
+    <div id="MassTable" class="Table">
+        <p class="Bolded-Text">Upcoming</p>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Place / Altar</th>
+                <!-- <th>Altar</th> -->
+                <th>Start Time</th>
+                <th>end time</th>
+                <th>Available seats</th>
+            </tr>
+            <tr *ngFor="let mass of allmasses ">
+                <td> {{mass.date}}</td>
+                <td> {{mass.location }}</td>
+                <td> {{mass.startTime}}</td>
+                <td> {{mass.endTime}}</td>
+                <td> {{mass.capacity}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+
     <p class="Header1 Bolded-Text">Add Holy Mass</p>
-    <form class="FullAdminForm form-group" #login (ngSubmit)="AddMassData(login)"> 
+    <form class="FullAdminForm form-group" #login (ngSubmit)="AddMassData()"> 
         <div class="adminform">
-        <input name="massday" required ngModel  placeholder="Day"  class="form-control" type="date">
-        <input name="masslocation" required ngModel  placeholder="Place/Altar" class="form-control" type="text">
-        <input name="capacity" required  ngModel placeholder="Available Seats" class="form-control" type="text"> 
-        <input name="starttime" required ngModel  placeholder="Start Time" class="form-control" type="text">
-        <input name="endtime" required  ngModel placeholder="End Time" class="form-control" type="text">
+        <input name="massday" required [(ngModel)]="AddedMass.date"  placeholder="Day"  class="form-control" type="date">
+        <input name="masslocation" required [(ngModel)]="AddedMass.location"  placeholder="Place/Altar" class="form-control" type="text">
+        <input name="capacity" required  [(ngModel)]="AddedMass.capacity" min="200" max="450" placeholder="Available Seats" class="form-control" type="number"> 
+        <input name="starttime" required [(ngModel)]="AddedMass.startTime"  placeholder="Start Time" class="form-control" type="text">
+        <input name="endtime" required  [(ngModel)]="AddedMass.endTime" placeholder="End Time" class="form-control" type="text">
         </div>
         <button type="submit" class="btn1">Add</button>
     </form>
 
     <p class="Header1 Bolded-Text">Edits Confessions</p>
-    <form class="ConfessionForm form-group" #login (ngSubmit)="AddFatherData(login)"> 
+    <form class="ConfessionForm form-group" #login (ngSubmit)="AddFatherData()"> 
     
         <div class=" confessionformholder ">
             <p id="fatherlabel" class="Bolded-Text">Father Name</p>
-            <input name="fathername" id="fathername" required ngModel  placeholder="Enter here the father name"  class="form-control" type="text">
+            <input name="fathername" id="fathername" required [(ngModel)]="AddedFather"  placeholder="Enter here the father name"  class="form-control" type="text">
         </div>
         <div class="button-holder">
              <button type="submit" class="btn1 add">Add</button>
-        <button type="submit" class="btn1 delete">Delete</button>
+        <button type="submit" (click)="Delete()" class="btn1 delete">Delete</button>
         </div>
         
     </form>
 
+</div>
+
+<div *ngIf="!isAdmin">
+    <p class="Bolded-Text Admin">
+        Only ADMIN CAN ENTER
+    </p>
 </div>

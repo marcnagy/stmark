@@ -6,12 +6,14 @@ import { HolyMassReservation } from '../../models/HolyMassReservation';
 import { ConfessionService } from '../../services/Confession.service';
 import { HolyMassService } from '../../services/HolyMass.service';
 
+
 @Component({
   selector: 'app-reserve',
   templateUrl: './reserve.component.html',
   styleUrls: ['./_reserve.component.scss']
 })
 export class ReserveComponent implements OnInit {
+  loggedin:boolean=this.myservice.Signedin
   Verse1:string="For a just man falleth seven times, and riseth up again: but the wicked shall fall into mischief. ~Proverbs 24:16"
   Verse2 :string="Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day ~John 6:54"
   id:string="HolyMass";
@@ -34,6 +36,9 @@ export class ReserveComponent implements OnInit {
   constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
 
   ngOnInit(): void {
+
+
+
     this.holyMassService.getTime().subscribe( (person)=>{
       for(let i=0;i<person.length;i++){
         this.startimes.push(person[i].startTime)

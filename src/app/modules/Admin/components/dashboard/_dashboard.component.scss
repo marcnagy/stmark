@@ -1,3 +1,5 @@
+@import '/src/styles.scss';
+
 .Admin-container{
     padding: 200px 19.16% ;
     .Header1{
@@ -75,7 +77,43 @@
     }
     
    
+    .Table{
+        margin-bottom: 176px;
+        table{
+            margin-top: 30px;
+            width: 100%;
+            text-align: center;
+            th{
+                background-color:$nav-bar-color ;
+                padding: 10px 0;
+                color: white;
+                border-right:solid 1px white ;
+                border-bottom:solid 12px white;
+            }
+            td{
+           
+                padding: 10px 0;
+                background-color:rgb(238, 213, 213);
+                color: black;
+                font-weight: bold;
+                border-right:solid 1px white ;
+                border-bottom:solid 8px white;
     
+            }
+            tr{
+            margin-bottom: 10px;
+            }
+        }
+        p{
+            font-size: 40px;
+        }
+    }
 
+}
+.Admin{
+    font-size: 60px;
+    color: red;
+    text-align: center;
+    margin: 15% 25%;
 }
 

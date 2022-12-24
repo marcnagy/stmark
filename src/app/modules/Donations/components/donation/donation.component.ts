@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Donation } from '../../models/donation';
 import { Router } from '@angular/router';
+import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
+
 
 
 @Component({
@@ -10,8 +12,9 @@ import { Router } from '@angular/router';
 })
 export class DonationComponent implements OnInit {
   Donation1:Donation= new Donation;
+  loggedin:boolean = this.myservice.Signedin
 
-  constructor(private myrouter:Router) { }
+  constructor(private myrouter:Router,private myservice:sign_inService) { }
 
   ngOnInit(): void {
     (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");

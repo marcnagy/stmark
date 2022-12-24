@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HolyMass } from 'src/app/modules/Reservations/models/HolyMass';
+import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,19 +10,47 @@ import { HolyMass } from 'src/app/modules/Reservations/models/HolyMass';
 })
 export class DashboardComponent implements OnInit {
 AddedMass:HolyMass= new HolyMass
-  constructor() { }
+allmasses:HolyMass[]=[]
+AddedFather:string=''
+isAdmin:boolean=this.myservice.isAdmin
+  constructor(private myservice:sign_inService) { }
 
   ngOnInit(): void {
   }
-  AddMassData(login:any)
+  AddMassData()
 {
-console.log(login.value)
-this.AddedMass=login.value
+  
 console.log(this.AddedMass)
+if(this.AddedMass.capacity==null 
+  || this.AddedMass.date==null 
+  || this.AddedMass.endTime==null 
+  || this.AddedMass.startTime==null
+  || this.AddedMass.location==null ){
+    alert("please fill in all the fields")
+  }
+  else{
+    //do the function here
+    this.allmasses.push(this.AddedMass)
+  }
+
+
 
 }
-AddFatherData(login:any){
-  console.log(login)
+AddFatherData(){
+if(this.AddedFather==''){
+  alert("please enter the name of the father u want to add or delete")
+}
+else{
+  //do the function here
+}
+}
+Delete(){
+  if(this.AddedFather==''){
+    alert("please enter the name of the father u want to add or delete")
+  }
+  else{
+    //do the function here
+  }
 
 }
 }
