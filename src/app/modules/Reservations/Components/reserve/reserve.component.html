@@ -1,4 +1,4 @@
-<div class=" mycontainer">
+<div class=" mycontainer" *ngIf="loggedin">
     <div class="tab">
         <ul>
             <li class="Bolded-Text" (click)="ChangeTab('HolyMass')" id="HolyMass">Holy Mass</li>
@@ -123,4 +123,10 @@
 
     </div>
 
+</div>
+
+<div *ngIf="!loggedin">
+    <p class="hidden">
+            YOU NEED TO SIGN IN
+    </p>
 </div>

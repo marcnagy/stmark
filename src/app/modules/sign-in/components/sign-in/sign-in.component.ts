@@ -17,11 +17,17 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void { 
    }
+   checkForAdmin(){
+    //implement here
+    return this.sign_inService1.isAdmin
+   }
+
   submit(login:any){
-    this.SigninData=login.value;
+    if(!this.checkForAdmin()){
+      this.SigninData=login.value;
     this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe( (person)=>{
                          alert("login Successfully");
-                       this.myrouter.navigate(['']);                             
+                       this.myrouter.navigate(['']);     
                        this.sign_inService1.Signedin=true;  
                        console.log(person.firstName)  ;
                        this.sign_inService1.firstName=person.firstName;
@@ -32,6 +38,15 @@ export class SignInComponent implements OnInit {
          },
          (error) =>alert("id or phone number is incorrect")
        );
+    }
+    else{
+      this.myrouter.navigate(['Admin'])
+      this.sign_inService1.firstName="Admin";
+      sessionStorage.setItem('isLogged',"true")
+      sessionStorage.setItem('Username',"Admin")         
+    }
+    
+    
       }
     //   reloadCurrentRoute() {
     //     let currentUrl = this.myrouter.url;
