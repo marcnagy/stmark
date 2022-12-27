@@ -4,12 +4,12 @@
 
 <form (ngSubmit)="submit(login)"  #login="ngForm">
     <div class="donation-buttons">
-    <div class="paymentmethods">
-    <div class="form-group ">
+    <div class="paymentmethods row">
+    <div class="form-group col-md-4">
         <input   ngModel  required value="Visa" type="radio" name="paymentMethod" id="visa">
         <label class="donation-input form-control radiobut Bolded-Text" for="visa"><img id="visa" src="assets/pictures/visa.png" ></label>
     </div>
-    <div class=" form-group ">
+    <div class=" form-group col-md-4 ">
         <input  ngModel required value="fawry" type="radio" name="paymentMethod" id="fawry">
         <label  class="donation-input form-control radiobut Bolded-Text" for="fawry"><img id="fawry" src="assets/pictures/fawry.png"></label>
     </div>
