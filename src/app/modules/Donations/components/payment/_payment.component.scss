@@ -1,4 +1,5 @@
 .radiobut{
+    width: 370px;
     p{
        margin-bottom: unset;
     }
@@ -6,9 +7,102 @@
     justify-content: center;
     align-items: center;
     border: none 2px black;
-    box-shadow: 0px 4px 50px -13px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 50px -13px rgba(0, 0, 0, 0.3);
     &:hover{
         border-color: rgba(4, 126, 248, 0.1);
         border: solid 4px rgb(0, 145, 255);}
 
+}
+.donation-input{
+    p{
+        margin-right: 60px;
+    }
+    height: 83px    ;
+    font-size: 35px;
+    padding-top: 42px;
+    padding-bottom: 44px;
+    border-radius: 40px;
+    margin-right: 50px;
+  
+}
+.paymentmethods{
+    display: flex;
+    margin-bottom: 106px;
+}
+.mycontainer{
+    padding:  50px 18% ;
+    #visa{
+        width: 82px ;
+        height: 32px;
+    }
+    #fawry{
+        width: 82px ;
+        height: 32px;
+    }
+}
+.Header{
+    font-size: 40px;
+}
+.header1{
+    margin-bottom: 106px;
+}
+.header2{
+    font-size: 32px;
+    color:rgba(84, 84, 84, 1);
+    margin-bottom: 93px;
+}
+input[type="radio"]{
+    -webkit-appearance: none;
+
+}
+
+input[type="radio"]:checked + label{
+    border-color: rgba(4, 126, 248, 0.1);
+    border: solid 4px rgb(0, 145, 255);
+}
+
+.creditcard{
+    input{
+        margin-bottom: 72px ;
+    box-shadow: 0px 4px 50px -13px rgba(0, 0, 0, 0.3);
+    &::content{
+       
+        color: rgba(156, 156, 156, 1);
+        font-size: 18px;
+        font-weight: bold;
+        padding-left: 50px;
+        
+    }
+    }
+    
+}
+.donatedamount{
+   text-align: center;
+   line-height: 60px;
+    width: 200px;
+    height: 60px;
+    box-shadow: 0px 4px 50px -13px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+ 
+    &::content{
+       
+        color: rgba(156, 156, 156, 1);
+        font-size: 22px;
+        font-weight: bold;
+        
+        
+    }
+    }
+.Donate{
+    display: flex;
+    position: relative;
+
+}
+.btn1{
+    position: absolute;
+    left: 170px;
+    width: 203px;
+height: 60px;
+box-shadow: 0px 4px 50px -13px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
 }
