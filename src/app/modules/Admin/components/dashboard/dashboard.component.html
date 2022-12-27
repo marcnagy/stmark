@@ -35,6 +35,22 @@
         <button type="submit" class="btn1">Add</button>
     </form>
 
+    
+    <div id="FathersTable" class="Table">
+        <p class="Bolded-Text">Available Fathers</p>
+        <table>
+            <tr>
+                <th>Father Name</th>
+            </tr>
+            <tr *ngFor="let father of allFathers ">
+                <td> {{father}}</td>
+            
+
+            </tr>
+        </table>
+    </div>
+
+
     <p class="Header1 Bolded-Text">Edits Confessions</p>
     <form class="ConfessionForm form-group" #login (ngSubmit)="AddFatherData()"> 
     
