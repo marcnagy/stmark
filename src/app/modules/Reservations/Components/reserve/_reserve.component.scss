@@ -113,6 +113,11 @@ form{
     text-align: center;
 
 }
+.Header{
+
+        font-size: 40px;
+    
+}
 .Table{
     margin-bottom: 176px;
     table{
@@ -140,11 +145,15 @@ form{
         margin-bottom: 10px;
         }
     }
-    p{
-        font-size: 40px;
-    }
+   
+}
+.scroll{
+    max-height: 350px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 #MassTable{
+   
     th{
         width: 14.28%;
     }

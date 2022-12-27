@@ -37,7 +37,7 @@ export class ReserveComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+console.log(this.resMasses)
 
     this.holyMassService.getTime().subscribe( (person)=>{
       for(let i=0;i<person.length;i++){
@@ -93,6 +93,18 @@ export class ReserveComponent implements OnInit {
 
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
   GetConfessionData(login:any){
     if(this.test.fatherName==''||this.test.date==''){alert("please pick all data");}
     else{
