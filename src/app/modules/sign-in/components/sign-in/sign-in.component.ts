@@ -38,6 +38,7 @@ export class SignInComponent implements OnInit {
                        this.sign_inService1.firstName=person.firstName;
                        this.sign_inService1.id=person.id;
                        this.sign_inService1.refreshmypage()
+                       sessionStorage.setItem('personid',person.id)
                        sessionStorage.setItem('isLogged',"true")
                        sessionStorage.setItem('Username',person.firstName)  }         
          },
