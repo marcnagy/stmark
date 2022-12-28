@@ -19,6 +19,11 @@ isAdmin:boolean=this.myservice.isAdmin
   constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
 
   ngOnInit(): void {
+    console.log(this.myservice.isAdmin);
+    
+    this.allFathers.push("moussa")
+    this.allFathers.push("Boules")
+
     this.holyMassService.GetHolyMass("all","all","all ").subscribe( (person:HolyMass[])=>{
       for(let i=0;i<person.length;i++){
         this.allmasses.push(person[i])
@@ -58,6 +63,7 @@ if(this.AddedFather==''){
 }
 else{
   this.confessionService.createConfession(this.AddedFather).subscribe(()=>{alert("father added successfully")})
+  this.allFathers.push(this.AddedFather)
 }
 }
 Delete(){
@@ -66,6 +72,7 @@ Delete(){
   }
   else{
     this.confessionService.DeleteConfession(this.AddedFather).subscribe(()=>{alert("father deleted successfully")})
+    
   }
 
 }

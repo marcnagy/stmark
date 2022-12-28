@@ -24,9 +24,12 @@ export class SignInComponent implements OnInit {
     this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe( (person)=>{
                          alert("login Successfully");
                       if(person.firstName=="admin") { 
-                        this.sign_inService1.isAdmin=true;
                       this.myrouter.navigate(['Admin']);
-                      this.sign_inService1.firstName="Admin";
+                      this.sign_inService1.isAdmin=true;
+                      this.sign_inService1.Signedin=true;  
+                        this.sign_inService1.firstName="Admin";
+                      this.sign_inService1.refreshmypage()
+                      sessionStorage.setItem('isAdmin',"true");
                       sessionStorage.setItem('isLogged',"true");
                       sessionStorage.setItem('Username',"Admin");   }
                     else{this.myrouter.navigate(['']);     
@@ -35,6 +38,7 @@ export class SignInComponent implements OnInit {
                        this.sign_inService1.firstName=person.firstName;
                        this.sign_inService1.id=person.id;
                        this.sign_inService1.refreshmypage()
+                       sessionStorage.setItem('personid',person.id)
                        sessionStorage.setItem('isLogged',"true")
                        sessionStorage.setItem('Username',person.firstName)  }         
          },

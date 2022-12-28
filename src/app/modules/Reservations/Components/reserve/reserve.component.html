@@ -32,10 +32,10 @@
             <div class="Verse">
                 <p>{{Verse2}}</p>
             </div>
-
+        <p class="Bolded-Text Header">Upcoming</p>
             <div id="MassTable" class="Table">
-                <p class="Bolded-Text">Upcoming</p>
-                <table>
+           <div class="scroll">
+             <table>
                     <tr>
                         <th>Day</th>
                         <th>Place / Altar</th>
@@ -53,15 +53,17 @@
 
                     </tr>
                 </table>
+           </div>
+               
             </div>
-
+           
             <div id="DetailsTable" class="Table">
                 <div class="Table-header">
-                    <p class="Bolded-Text">Reservation Details</p>
+                     <p class="Header Bolded-Text">Reservation Details</p>
                     <button (click)="CancelReservation()" class="btn1">Cancel Reservation</button>
                 </div>
-                
-                <table>
+                <div class="scroll">
+                    <table>
                     <tr>
                         <!-- <th>Name</th> -->
                         <th>Day</th>
@@ -85,6 +87,8 @@
 
                     </tr>
                 </table>
+                </div>
+                
             </div>
 
             <!-- This is the end of the tab -->
@@ -104,9 +108,9 @@
             <div class="Verse2">
                 <p>{{Verse1}}</p>
             </div>
-
-            <div class="Table">
-                <p class="Bolded-Text">History</p>
+    <p class="Header Bolded-Text">History</p>
+            <div class="Table scroll ">
+                
 
                 <table>
                     <tr>

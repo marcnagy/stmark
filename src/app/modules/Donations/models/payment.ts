@@ -4,6 +4,6 @@ export class Payment{
     cardnumber?:Number;
     cardpin?:Number;
     CardholderName?:Number;
-    CardDate?:Date;
+    CardDate?:string;
 
 }

@@ -36,8 +36,10 @@ export class ReserveComponent implements OnInit {
   constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
 
   ngOnInit(): void {
+    const rekt=sessionStorage.getItem("personid") as string
+    this.myservice.id=rekt
 
-
+console.log(this.resMasses)
 
     this.holyMassService.getTime().subscribe( (person)=>{
       for(let i=0;i<person.length;i++){
@@ -93,6 +95,18 @@ export class ReserveComponent implements OnInit {
 
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
   GetConfessionData(login:any){
     if(this.test.fatherName==''||this.test.date==''){alert("please pick all data");}
     else{

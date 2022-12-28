@@ -16,7 +16,12 @@ export class HeaderComponent implements OnInit {
   FirstName :string | undefined ;
 
   ngOnInit(): void {
+    const isadmin =sessionStorage.getItem('isAdmin')
+    if(isadmin=="true"){
+      this.sign_inService1.isAdmin=true
+      this.sign_inService1.firstName="Admin";
 
+    }
     const value =sessionStorage.getItem('isLogged')
     console.log(value+"the value in session")
     if (value !=null){
