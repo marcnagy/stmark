@@ -13,6 +13,7 @@ import { sign_inService } from 'src/app/modules/sign-in/services/person.service'
 export class DashboardComponent implements OnInit {
 AddedMass:HolyMass= new HolyMass
 allmasses:HolyMass[]=[]
+fathers:string[]=[]
 AddedFather:string=''
 isAdmin:boolean=this.myservice.isAdmin
   constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
@@ -21,6 +22,14 @@ isAdmin:boolean=this.myservice.isAdmin
     this.holyMassService.GetHolyMass("all","all","all ").subscribe( (person:HolyMass[])=>{
       for(let i=0;i<person.length;i++){
         this.allmasses.push(person[i])
+      }
+      
+     });
+     this.confessionService.getFather().subscribe( (person)=>{
+      for(let i=0;i<person.length;i++){
+                this.fathers.push(person[i].fatherName);
+                
+                
       }
      });
   }
