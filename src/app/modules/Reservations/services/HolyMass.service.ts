@@ -45,7 +45,7 @@ private url1="holymassreservationControllor";
 
   public Increase(location:string,start:string,end:string){
   return   this.http
-    .delete<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${end}`);
+    .post<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${end}`,"");
   }
   public Decrease(location:string,start:string,end:string){
    return  this.http.put<HolyMass[]>(`${environment.apiUrl}/${this.url}/${location},${start},${end}`, 'Angular PUT Request Example' );

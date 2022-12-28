@@ -40,7 +40,7 @@ private url1="ConfessionControllor";
   }
   public DeleteConfession(fatherName:string):Observable<ConfessionData[]>{
     return this.http
-    .delete<ConfessionData[]>(`${environment.apiUrl}/${this.url}/${fatherName}`);
+    .delete<ConfessionData[]>(`${environment.apiUrl}/${this.url1}/${fatherName}`);
   }
   
 }

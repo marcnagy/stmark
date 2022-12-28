@@ -33,6 +33,7 @@
         <input name="endtime" required  [(ngModel)]="AddedMass.endTime" placeholder="End Time" class="form-control" type="text">
         </div>
         <button type="submit" class="btn1">Add</button>
+        <button type="button" (click)="DeleteMassData()" class="btn1 deleteHolyMass">delete</button>
     </form>
 
     
@@ -42,7 +43,7 @@
             <tr>
                 <th>Father Name</th>
             </tr>
-            <tr *ngFor="let father of allFathers ">
+            <tr *ngFor="let father of fathers ">
                 <td> {{father}}</td>
             
 
@@ -60,7 +61,7 @@
         </div>
         <div class="button-holder">
              <button type="submit" class="btn1 add">Add</button>
-        <button type="submit" (click)="Delete()" class="btn1 delete">Delete</button>
+        <button type="button" (click)="Delete()" class="btn1 delete">Delete</button>
         </div>
         
     </form>

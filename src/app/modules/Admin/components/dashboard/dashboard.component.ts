@@ -19,10 +19,6 @@ isAdmin:boolean=this.myservice.isAdmin
   constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
 
   ngOnInit(): void {
-    console.log(this.myservice.isAdmin);
-    
-    this.allFathers.push("moussa")
-    this.allFathers.push("Boules")
 
     this.holyMassService.GetHolyMass("all","all","all ").subscribe( (person:HolyMass[])=>{
       for(let i=0;i<person.length;i++){
@@ -57,22 +53,50 @@ if(this.AddedMass.capacity==null
 
 
 }
+
+DeleteMassData()
+{
+  
+
+if(
+ this.AddedMass.date==null 
+  || this.AddedMass.startTime==null
+  || this.AddedMass.location==null ){
+    alert("please fill in all the fields")
+  }
+  else{
+    this.holyMassService.DeleteMass(this.AddedMass.location,this.AddedMass.startTime,this.AddedMass.date).subscribe(()=>{alert("holymass deleted successfully")})
+    for(let i=0;i<this.allmasses.length;i++)
+    {if(this.allmasses[i].location==this.AddedMass.location&&this.allmasses[i].date==this.AddedMass.date&&this.allmasses[i].startTime==this.AddedMass.startTime){
+      this.allmasses.splice(i,1);
+    }
+  console.log(this.allmasses[i]);
+  }
+  }
+
+
+
+}
+
 AddFatherData(){
 if(this.AddedFather==''){
-  alert("please enter the name of the father u want to add or delete")
+  alert("please enter the name of the father u want to add")
 }
 else{
   this.confessionService.createConfession(this.AddedFather).subscribe(()=>{alert("father added successfully")})
-  this.allFathers.push(this.AddedFather)
+  this.fathers.push(this.AddedFather)
 }
 }
 Delete(){
   if(this.AddedFather==''){
-    alert("please enter the name of the father u want to add or delete")
+    alert("please enter the name of the father u want to delete")
   }
   else{
     this.confessionService.DeleteConfession(this.AddedFather).subscribe(()=>{alert("father deleted successfully")})
-    
+    for(let i=0;i<this.fathers.length;i++)
+    {if(this.fathers[i]==this.AddedFather){
+      this.fathers.splice(i,1);
+    }}
   }
 
 }

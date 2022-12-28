@@ -1,5 +1,5 @@
 export class Payment{
-    donationamount: string='';
+    donationamount: number=0;
     donationtype:string='';
     cardnumber?:Number;
     cardpin?:Number;

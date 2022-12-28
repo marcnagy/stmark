@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Donation } from '../../models/donation';
 import { Router } from '@angular/router';
 import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
+import { DonationService } from '../../services/donation.service';
 
 
 
@@ -14,7 +15,7 @@ export class DonationComponent implements OnInit {
   Donation1:Donation= new Donation;
   loggedin:boolean = this.myservice.Signedin
 
-  constructor(private myrouter:Router,private myservice:sign_inService) { }
+  constructor(private myrouter:Router,private myservice:sign_inService,private donation:DonationService) { }
 
   ngOnInit(): void {
     (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");
@@ -30,13 +31,18 @@ export class DonationComponent implements OnInit {
       alert("Please Select all the buttons")
     }
     else{
-
-    console.log(login.value)
-    this.Donation1=login.value
-    console.log(this.Donation1.donationentity);
-    console.log(this.Donation1.donationfrequency);
-    console.log(this.Donation1.donationamount);
-    this.checkDonation()
+      this.Donation1=login.value
+      if(login.value.recurring=="true")
+      this.Donation1.recurring=true;
+      else this.Donation1.recurring=false;
+      this.Donation1.personID=this.myservice.id;
+      console.log(this.Donation1);
+      this.donation.MakeDonation(this.Donation1).subscribe(()=>{
+        
+        alert("please enter your payment data");
+      this.donation.amount=this.Donation1.amount;
+      this.checkDonation()})
+    
     }
   }
 

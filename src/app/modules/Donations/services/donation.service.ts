@@ -10,6 +10,7 @@ import { Donation } from '../models/donation';
 })
 export class DonationService {
   private Signedin :boolean =false;
+  amount:number=0;
 private url="DonationControllor";
 
   constructor(private http:HttpClient) { }
