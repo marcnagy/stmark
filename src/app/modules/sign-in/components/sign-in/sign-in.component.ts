@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { sign_inService } from '../../services/person.service';
 import { SigninModel } from '../../models/signin';
 import { Router } from '@angular/router';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
+import { dynamicCodeModel } from 'src/app/modules/dynamic-code/models/dynamicCodeModel';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,11 +15,13 @@ export class SignInComponent implements OnInit {
   title="signin.ui";
   SigninData: SigninModel = new SigninModel; 
   SigninBinded: SigninModel = new SigninModel;
-  constructor(private sign_inService1:sign_inService , private myrouter:Router) { }
+  datashown:string[]=[]
+  constructor(private sign_inService1:sign_inService , private myrouter:Router, private dynamicCode:DynamicCode_inService) { }
 
   ngOnInit(): void { 
+    this.dynamicCode.changelang();
+    this.datashown=this.dynamicCode.datashown;
    }
-   
 
   submit(login:any){
       this.SigninData=login.value;

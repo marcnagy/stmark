@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 import { Donation } from '../../models/donation';
 import { Payment } from '../../models/payment';
 import { DonationService } from '../../services/donation.service';
@@ -13,9 +14,13 @@ export class PaymentComponent implements OnInit {
 paymentdetail:Payment = new Payment
 donate:Donation=new Donation
 donationamount:number=0
-  constructor(private paymentService:DonationService) { }
+datashown:string[]=[]
+
+  constructor(private paymentService:DonationService,private dynamicCode:DynamicCode_inService) { }
 
   ngOnInit(): void {
+    this.dynamicCode.changelang();
+    this.datashown=this.dynamicCode.datashown;
     this.donationamount=this.paymentService.amount
   }
   submit(login:NgForm){

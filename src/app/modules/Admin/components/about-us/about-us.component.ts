@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 
 @Component({
   selector: 'app-about-us',
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./_about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+constructor(private dynamic : DynamicCode_inService){
 
-  aboutus:string="الفكره و النشآه"+
-"  يذكر الدكتور غبريال بك جرجس فى كتابه  أنه كان يعظ سنة 1913م فى مصر الجديدة فى منزل الأستاذ فريد أفندى كامل حيث تكونت فيما بعد هيئة من بين المجتمعين لتكوين جمعية أصبحت بعد ذلك نواة لجنة الكنيسة."+
-"  قبل وضع حجر الأساس بنحو 8 سنوات وبالتحديد فى 14إبريل 1914م نشرت جريدة الوطن هذا الخبر- نقلاّ عن جريدة (Egyptian mail) عن الطلب الذى أرسله جماعة من الأقباط الغيورين إلى مدير شركة هليوبوليس لإيجاد كنيسة لهم بمصر الجديد+ة"+
-"  فى عام 1917م تفضل الأستاذ فريد كامل المحرر بجريدة الوطنية بدعوة الأقباط الأرثوذكس القاطــنين بمصر الجديدة إلى داره، وبين لهم حاجة سكان الضاحية إلى الاهتمام بشئونهم فتتابعت الاجتماعات فى منزله أسبوعيا وكان يعظ فيها الشماس فرج جرجس، وقد نمت هذه الاجتماعات حتى لم تعد داره تتسع للحاضرين فألحت فكرة إيجاد مكان متسع لإقامة الاجتماعات، وكان يتناوب خدمة الوعظ الكثير من المشاهير نذكر منهم: حضرة الشماس غبريال سليمان (وقد رسم كاهنًا فيما بعد لكنيسة بميت غمر)، والواعظ إبراهيم لوقا (القمص إبراهيم لوقا) والقمص "
+}
+datashown:string[]=[]
 
   ngOnInit(): void {
+    this.dynamic.changelang();
+    this.datashown=this.dynamic.datashown;
   }
 
 }

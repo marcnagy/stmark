@@ -1,10 +1,12 @@
 <div class="container-fluid" id="myheader">
     <div class="row">
         <div class="leftsection col-md-6">
-            <div class="header-img "><img src="assets/pictures/eng-arab.png"></div>
-            <div><img src="assets/pictures/internet2.png"></div>
-            <button *ngIf="!showBut"  (click)="remove()"  class="btn1 header-but" id="header-but"  routerLink="/SignIn" >Sign in</button>
-            <button *ngIf="showBut" (click)="signout()"   class="btn1 header-but" id="header-but-out"  >Sign out</button>
+            <div><img src="assets/pictures/internet2.png">
+                <button (click)="changetoeng()"  class="btn1">{{datashown[48]}}</button>
+                <button (click)="changetoar()"  class="btn1">{{datashown[47]}}</button>
+            </div>
+            <button *ngIf="!showBut"  (click)="remove()"  class="btn1 header-but" id="header-but"  routerLink="/SignIn" >{{datashown[12]}}</button>
+            <button *ngIf="showBut" (click)="signout()"   class="btn1 header-but" id="header-but-out"  >{{datashown[49]}}</button>
             <div class="Bolded-Text Username" *ngIf="showBut" ><span class="icon-user-tie"></span> {{FirstName}}</div>
         
         </div>

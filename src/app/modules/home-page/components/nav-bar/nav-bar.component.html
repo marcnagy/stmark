@@ -2,29 +2,24 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-              <a href="">Home</a>
+              <a role="button" (click)="ngOnInit()" routerLink="" id="homenavbutton">{{datashown[2]}}</a>
             </li>
         <li class="nav-item">
-          <a role="button" (click)="GotoReservations()">Holly Mass Reservation</a>
+          <a role="button" (click)="GotoReservations()">{{datashown[5]}}</a>
         </li>
         <li class="dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{datashown[6]}}</a>
           <ul class="dropdown-menu drop-xd in-menu">
-            <li><a class="dropdown-item" routerLink="reserve" ><p>Confession</p> </a></li>
-            <li><a class="dropdown-item" routerLink="donation" ><p>Donation</p> </a></li>
+            <li><a class="dropdown-item" routerLink="reserve" ><p>{{datashown[7]}}</p> </a></li>
+            <li><a class="dropdown-item" routerLink="donation" ><p>{{datashown[8]}}</p> </a></li>
           </ul>
 
         </li>
         <li class="dropdown">
-          <a class="nav-link dropdown-toggle" (click)="GotoDonations()"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Donation</a>
-          <!-- <ul class="dropdown-menu drop-xd in-menu">
-            <li><a class="dropdown-item" href="" ><p>Confession</p> </a></li>
-            <li><a class="dropdown-item" href="" ><p>Donation</p> </a></li>
-            <li><a class="dropdown-item" href="" > <p>Holly Mass</p></a></li>
-          </ul> -->
+          <a class="nav-link dropdown-toggle" (click)="GotoDonations()"  role="button" data-bs-toggle="dropdown" aria-expanded="false">{{datashown[8]}}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="Admin/aboutus">About us</a> 
+          <a routerLink="Admin/aboutus">{{datashown[9]}}</a> 
         </li>
        
       </ul>

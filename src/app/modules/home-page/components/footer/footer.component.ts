@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./_footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  datashown:string[]=[]
 
-  constructor() { }
+
+  constructor(private dynamicCode:DynamicCode_inService) { }
 
   ngOnInit(): void {
+    this.dynamicCode.changelang();
+    this.datashown=this.dynamicCode.datashown;
   }
 
 }

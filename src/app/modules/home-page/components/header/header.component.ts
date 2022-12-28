@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SignInComponent } from 'src/app/modules/sign-in/components/sign-in/sign-in.component';
 import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
 import { Router } from '@angular/router';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,16 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   test:number=5;
-  
-  constructor( public sign_inService1:sign_inService , private myrouter:Router) { }
+  datashown:string[]=[]
+
+  constructor( public sign_inService1:sign_inService , private myrouter:Router , private dynamic : DynamicCode_inService) { }
   showBut:boolean | undefined;
   FirstName :string | undefined ;
 
   ngOnInit(): void {
+    this.dynamic.changelang();
+    this.datashown=this.dynamic.datashown;
+ 
     const isadmin =sessionStorage.getItem('isAdmin')
     if(isadmin=="true"){
       this.sign_inService1.isAdmin=true
@@ -51,6 +56,25 @@ export class HeaderComponent implements OnInit {
     this.ngOnInit();
     this.myrouter.navigate([''])
   }
+ changetoeng(){
+  this.dynamic.arabic=false;
+  this.ngOnInit()
+  this.dynamic.checklang()
+  this.dynamic.refreshnav()
+  this.dynamic.refreshslid()
+  this.myrouter.navigate([''])
+
+  
+ }
+ changetoar(){
+  this.dynamic.arabic=true
+  this.ngOnInit()
+  this.dynamic.checklang()
+  this.dynamic.refreshnav()
+  this.dynamic.refreshslid()
+  this.myrouter.navigate([''])
+
+ }
 
 
 

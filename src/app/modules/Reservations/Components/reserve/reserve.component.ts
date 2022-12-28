@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
 import { ConfessionData } from '../../models/Confession';
 import { HolyMass } from '../../models/HolyMass';
@@ -32,10 +33,13 @@ export class ReserveComponent implements OnInit {
   locations:string[]=[];
    user:ConfessionData=new ConfessionData;
   user2:HolyMassReservation=new HolyMassReservation;
+  datashown:string[]=[]
 
-  constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService) { }
+  constructor(private myservice:sign_inService,private holyMassService:HolyMassService,private confessionService:ConfessionService,private dynamicCode:DynamicCode_inService) { }
 
   ngOnInit(): void {
+    this.dynamicCode.changelang();
+    this.datashown=this.dynamicCode.datashown;
     const rekt=sessionStorage.getItem("personid") as string
     this.myservice.id=rekt
 

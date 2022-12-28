@@ -3,6 +3,7 @@ import { Donation } from '../../models/donation';
 import { Router } from '@angular/router';
 import { sign_inService } from 'src/app/modules/sign-in/services/person.service';
 import { DonationService } from '../../services/donation.service';
+import { DynamicCode_inService } from 'src/app/modules/dynamic-code/services/dynamicCodeService';
 
 
 
@@ -14,10 +15,20 @@ import { DonationService } from '../../services/donation.service';
 export class DonationComponent implements OnInit {
   Donation1:Donation= new Donation;
   loggedin:boolean = this.myservice.Signedin
+  datashown:string[]=[]
+  temp:string|undefined;
+  temp2:string|undefined;
 
-  constructor(private myrouter:Router,private myservice:sign_inService,private donation:DonationService) { }
+  
+
+
+
+
+  constructor(private myrouter:Router,private myservice:sign_inService,private donation:DonationService,private dynamicCode:DynamicCode_inService) { }
 
   ngOnInit(): void {
+    this.dynamicCode.changelang();
+    this.datashown=this.dynamicCode.datashown;
     (document.getElementById("myheader") as HTMLInputElement).classList.remove("addtheimg");
   }
 

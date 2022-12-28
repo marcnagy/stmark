@@ -1,8 +1,8 @@
 <div class=" mycontainer" *ngIf="loggedin">
     <div class="tab">
         <ul>
-            <li class="Bolded-Text" (click)="ChangeTab('HolyMass')" id="HolyMass">Holy Mass</li>
-            <li class="Bolded-Text" (click)="ChangeTab('Confession')" id="Confession"> Confession</li>
+            <li class="Bolded-Text" (click)="ChangeTab('HolyMass')" id="HolyMass">{{datashown[24]}}</li>
+            <li class="Bolded-Text" (click)="ChangeTab('Confession')" id="Confession"> {{datashown[25]}}</li>
         </ul>
 
     </div>
@@ -12,25 +12,25 @@
 
             <form id="Mass-form" (ngSubmit)="GetMassData(login)" #login="ngForm">
                 <div class="Form-inputs form-group">
-                    <label for="MassDate">Date:</label>
+                    <label for="MassDate">{{datashown[26]}}:</label>
                     <input required class="form-control input" name="MassDate" [(ngModel)]="mass2.date" type="date" >
 
-                    <label for="TimeSlots">Time: </label>
+                    <label for="TimeSlots">{{datashown[27]}} </label>
                     <select class="Form-inputs input" name="TimeSlots" [(ngModel)]="mass2.startTime" id="Timeslots" placeholder="TimeSlot">
                         <option *ngFor="let startime of startimes" value="{{startime}}">{{startime}}</option>
                     </select>
 
-                    <label for="places">Place:</label>
+                    <label for="places">{{datashown[29]}}</label>
                     <select class="Form-inputs input" name="places" [(ngModel)]="mass2.location" id="places" placeholder="Place">
                         <option *ngFor="let location of locations" value="{{location}}">{{location}}</option>
                     </select>
 
                 </div>
-                <button class="btn1"> Reserve</button>
+                <button class="btn1"> {{datashown[28]}}</button>
             </form>
             <!-- mass Verse -->
             <div class="Verse">
-                <p>{{Verse2}}</p>
+                <p>{{datashown[30]}}</p>
             </div>
         <p class="Bolded-Text Header">Upcoming</p>
             <div id="MassTable" class="Table">
@@ -96,17 +96,17 @@
         <div class="content-value " *ngIf=" id ==='Confession'">
             <form (ngSubmit)="GetConfessionData(login)" #login="ngForm">
                 <div class="Form-inputs form-group">
-                    <label for="fathername">Father:</label>
+                    <label for="fathername">{{datashown[31]}}</label>
                     <select class="Form-inputs input" name="fathername" [(ngModel)]="test.fatherName" id="fathername">
                         <option *ngFor="let onefather of fathers" value="{{onefather}}">{{onefather}}</option>
                     </select>
-                    <label for="MassDate">Date:</label>
+                    <label for="MassDate">{{datashown[26]}}</label>
                     <input required class="form-control input" name="MassDate" [(ngModel)]="test.date" type="date" >                 
                 </div>
-                <button class="btn1"> Reserve</button>
+                <button class="btn1"> {{datashown[28]}}</button>
             </form>
             <div class="Verse2">
-                <p>{{Verse1}}</p>
+                <p>{{datashown[36]}}</p>
             </div>
     <p class="Header Bolded-Text">History</p>
             <div class="Table scroll ">
