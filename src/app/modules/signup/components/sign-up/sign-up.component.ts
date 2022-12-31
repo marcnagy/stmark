@@ -25,26 +25,30 @@ export class SignUpComponent implements OnInit {
 GetUserSignUpData(login:any){
   let x:signupuser;
   let checker:boolean=false;
-this.User=login.value;
-if(this.User.id==''|| this.User.phonenumber==''||this.User.firstname==''|| this.User.lastName==''|| this.User.Address==''||this.User.email=='')
-alert("please fill the fields")
-else{
+  this.User=login.value;
+
+console.log(this.User,login.valid);
+if(login.valid==true){
   for(x  of (this.persons)){
-  console.log(this.User)
-  if(x.id==this.UserBinded.id)
-  {alert("National ID is already in use "+ x.id)
-    checker=true;
-    break;}
-    if(x.phonenumber==this.UserBinded.phonenumber)
-    {alert("Phone number is already in use "+ x.phonenumber)
+    if(x.id==this.UserBinded.id)
+    {alert("National ID is already in use "+ x.id)
       checker=true;
       break;}
+      if(x.phonenumber==this.UserBinded.phonenumber)
+      {alert("Phone number is already in use "+ x.phonenumber)
+        checker=true;
+        break;}
+  }
+  if(checker==false){
+    this.sign_UpService1.CreateUser(this.UserBinded).subscribe()
+    alert("Signup Successfully")
+    this.myrouter.navigate(["/SignIn"])
+  }
 }
-if(checker==false){
-  this.sign_UpService1.CreateUser(this.UserBinded).subscribe()
-  alert("Signup Successfully")
-  this.myrouter.navigate(["/SignIn"])
-}
+
+else{
+  alert("please fill all the fields correctly")
+
 }
 
 }
