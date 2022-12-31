@@ -26,7 +26,10 @@ GetUserSignUpData(login:any){
   let x:signupuser;
   let checker:boolean=false;
 this.User=login.value;
-for(x  of (this.persons)){
+if(this.User.id==''|| this.User.phonenumber==''||this.User.firstname==''|| this.User.lastName==''|| this.User.Address==''||this.User.email=='')
+alert("please fill the fields")
+else{
+  for(x  of (this.persons)){
   console.log(this.User)
   if(x.id==this.UserBinded.id)
   {alert("National ID is already in use "+ x.id)
@@ -42,6 +45,8 @@ if(checker==false){
   alert("Signup Successfully")
   this.myrouter.navigate(["/SignIn"])
 }
+}
+
 }
 
 }

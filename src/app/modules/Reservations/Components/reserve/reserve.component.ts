@@ -153,9 +153,9 @@ else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>
     (document.getElementById(id) as HTMLInputElement).classList.add("active")
   }
 
-  Reserve(){
+  
 
-  }
+
   CancelReservation(){
     var isSelected:boolean=false;
     var allmasses=(document.getElementsByClassName("checkbox-delete"))
@@ -177,15 +177,11 @@ else{    this.holyMassService.addHolyMassReservation(this.user2).subscribe( ()=>
       }
       }
       } 
-      
     }
     else{
       alert("please Select the wanted Masses to delete")
     }
-    
     }
-  
-      
       }
 
   
