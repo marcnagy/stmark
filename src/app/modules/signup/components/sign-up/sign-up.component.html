@@ -2,18 +2,18 @@
    <div class="row">
       <div class="sign-in-element col-md-6">
         <div class="sign-in-header Bolded-Text">
-            {{datashown[18]}}
+            {{datashown[16]}}
         </div>
         <form class="my-form" #login="ngForm" (ngSubmit)="GetUserSignUpData(login)">
              <div class="input-form form-group">
-            <input  required maxlength="14" minlength="14" pattern="[0-9]*" class="Inputfield form-control " id="national-id-inp" type="text" placeholder="{{datashown[13]}}" name="nationalid" ngModel [(ngModel)]="UserBinded.id">
-            <input  required  maxlength="11" minlength="11" pattern="[0-9]*"  class="Inputfield form-control" id="phone-num-inp" type="text" placeholder="{{datashown[14]}}"  name="phonenumber" ngModel [(ngModel)]="UserBinded.phonenumber">
-            <input  required class="Inputfield form-control" id="first-name-inp" type="text" placeholder="{{datashown[19]}}" name="FirstName" ngModel [(ngModel)]="UserBinded.firstname">
-            <input  required class="Inputfield form-control" id="second-name-inp" type="text" placeholder="{{datashown[20]}}" name="Second Name" ngModel [(ngModel)]="UserBinded.lastName">
-            <input  required class="Inputfield form-control" id="adress-inp" type="text" placeholder="{{datashown[23]}}" name="Address" ngModel [(ngModel)]="UserBinded.Address">
-            <input  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  class="Inputfield form-control" id="email-inp" type="text" placeholder="{{datashown[22]}}" name="Email" ngModel [(ngModel)]="UserBinded.email">
+            <input  required maxlength="14" minlength="14" pattern="[0-9]*" class="Inputfield form-control " id="national-id-inp" type="text" placeholder="{{datashown[11]}}" name="nationalid" ngModel [(ngModel)]="UserBinded.id">
+            <input  required  maxlength="11" minlength="11" pattern="[0-9]*"  class="Inputfield form-control" id="phone-num-inp" type="text" placeholder="{{datashown[12]}}"  name="phonenumber" ngModel [(ngModel)]="UserBinded.phonenumber">
+            <input  required class="Inputfield form-control" id="first-name-inp" type="text" placeholder="{{datashown[17]}}" name="FirstName" ngModel [(ngModel)]="UserBinded.firstname">
+            <input  required class="Inputfield form-control" id="second-name-inp" type="text" placeholder="{{datashown[18]}}" name="Second Name" ngModel [(ngModel)]="UserBinded.lastName">
+            <input  required class="Inputfield form-control" id="adress-inp" type="text" placeholder="{{datashown[20]}}" name="Address" ngModel [(ngModel)]="UserBinded.Address">
+            <input  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  class="Inputfield form-control" id="email-inp" type="text" placeholder="{{datashown[19]}}" name="Email" ngModel [(ngModel)]="UserBinded.email">
         </div>
-        <div class="sign-up button-holder"><button class="sign-up-button btn1" >{{datashown[18]}}</button></div>
+        <div class="sign-up button-holder"><button class="sign-up-button btn1" >{{datashown[14]}}</button></div>
 
         </form>
        

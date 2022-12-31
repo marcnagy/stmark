@@ -1,41 +1,41 @@
 <div class="mycontainer" *ngIf="loggedin">
     <div class="donation-title Bolded-Text">
-        {{datashown[1]}}
+        {{datashown[30]}}
     </div>
     <form (ngSubmit)="submit(login)"  #login="ngForm">
         <div class="donation-buttons">
             <div class="row ">
                 <div class="col-md-6 form-group">
                     <input   ngModel required value="shelter" type="radio"  name="provided_to" id="shelter">
-                    <label class="donation-input form-control radiobut Bolded-Text" for="shelter"><p>{{datashown[32]}}</p><img src="assets/pictures/family.png" ></label>
+                    <label class="donation-input form-control radiobut Bolded-Text" for="shelter"><p>{{datashown[31]}}</p><img src="assets/pictures/family.png" ></label>
                 </div>
                 <div class="col-lg-6 form-group">
                     <input   ngModel  required value="people in need" type="radio" name="provided_to" id="People">
-                    <label class="donation-input form-control radiobut Bolded-Text" for="People"><p>{{datashown[33]}}</p>  <img src="assets/pictures/poverty.png" ></label>
+                    <label class="donation-input form-control radiobut Bolded-Text" for="People"><p>{{datashown[32]}}</p>  <img src="assets/pictures/poverty.png" ></label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 form-group">
                     <input   ngModel  required value="church buildings" type="radio" name="provided_to" id="buildings">
-                    <label class="donation-input form-control radiobut Bolded-Text" for="buildings"> <p>{{datashown[34]}}</p>  <img src="assets/pictures/church.png" ></label>
+                    <label class="donation-input form-control radiobut Bolded-Text" for="buildings"> <p>{{datashown[33]}}</p>  <img src="assets/pictures/church.png" ></label>
                 </div>
                 <div class="col-lg-6 form-group">
                     <input  ngModel required value="church projects" type="radio" name="provided_to" id="projects">
-                    <label  class="donation-input form-control radiobut Bolded-Text" for="projects"><p>{{datashown[35]}}</p> <img src="assets/pictures/under-construction.png"></label>
+                    <label  class="donation-input form-control radiobut Bolded-Text" for="projects"><p>{{datashown[34]}}</p> <img src="assets/pictures/under-construction.png"></label>
                 </div>
             </div>
         </div>
-        <div id="bible-verse">{{datashown[36]}}</div>
+        <div id="bible-verse">{{datashown[35]}}</div>
         <div id="donation-freq" >
             <!-- <div class="title" class="Bolded-Text"> {{temp}}</div> -->
             <div class="frequency">
                 <div >
                     <input ngModel  required  value=false type="radio" name="recurring" id="once">
-                    <label class=" giving-frequency form-control radiobut Bolded-Text" for="once"><p>{{datashown[37]}}</p></label>
+                    <label class=" giving-frequency form-control radiobut Bolded-Text" for="once"><p>{{datashown[36]}}</p></label>
                 </div>
                 <div>
                     <input ngModel   required  value=true type="radio" name="recurring" id="frequency">
-                    <label  class=" giving-frequency form-control radiobut Bolded-Text" for="frequency"><p>{{datashown[38]}}</p></label>
+                    <label  class=" giving-frequency form-control radiobut Bolded-Text" for="frequency"><p>{{datashown[37]}}</p></label>
                 </div>
             </div>
         </div>
@@ -55,13 +55,13 @@
             </div>
             <div id="shown-section" >
                 <input    required  type="radio" name="amount" id="other">
-                <label (click)="DisplayAmount()" class=" giving-amount radiobut Bolded-Text" for="other"><p>{{datashown[39]}}</p></label>
+                <label (click)="DisplayAmount()" class=" giving-amount radiobut Bolded-Text" for="other"><p>{{datashown[38]}}</p></label>
             </div>
             <div class="hidden-amount hidden form-group" id="hidden-section">
-                <input required ngModel type="text" class=" form-control Bolded-Text"  name="amount"  id="Amount-donated" placeholder="{{datashown[40]}}">
+                <input required ngModel type="text" class=" form-control Bolded-Text"  name="amount"  id="Amount-donated" placeholder="{{datashown[38]}}">
             </div>
         </div>
-        <button class="donatebut btn1"   type="submit" >{{datashown[40]}}</button>
+        <button class="donatebut btn1"   type="submit" >{{datashown[39]}}</button>
     </form>
 </div>
 
