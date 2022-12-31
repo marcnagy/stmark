@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
       this.SigninData=login.value;
     this.sign_inService1.getPerson(this.SigninData.id,this.SigninData.phonenumber).subscribe( (person)=>{
                          alert("login Successfully");
-                      if(person.firstName=="admin") { 
+                      if(person.isadmin==true) { 
                       this.myrouter.navigate(['Admin']);
                       this.sign_inService1.isAdmin=true;
                       this.sign_inService1.Signedin=true;  
