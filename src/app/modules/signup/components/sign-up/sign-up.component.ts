@@ -28,6 +28,7 @@ GetUserSignUpData(login:any){
   this.User=login.value;
 
 console.log(this.User,login.valid);
+//login code
 if(login.valid==true){
   for(x  of (this.persons)){
     if(x.id==this.UserBinded.id)
