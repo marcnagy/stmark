@@ -62,6 +62,7 @@ export class HeaderComponent implements OnInit {
   this.dynamic.checklang()
   this.dynamic.refreshnav()
   this.dynamic.refreshslid()
+  this.dynamic.refreshfoot()
   this.myrouter.navigate([''])
 
   
@@ -72,6 +73,7 @@ export class HeaderComponent implements OnInit {
   this.dynamic.checklang()
   this.dynamic.refreshnav()
   this.dynamic.refreshslid()
+  this.dynamic.refreshfoot()
   this.myrouter.navigate([''])
 
  }
