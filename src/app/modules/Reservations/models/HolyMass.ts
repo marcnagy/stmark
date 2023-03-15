@@ -10,5 +10,13 @@ export class HolyMass{
     endtime:string|undefined;
     AvailablePlaces:number|undefined;
     cancellation?:boolean;
+
+    // date:string|undefined;
+    // prayer:string|undefined;
+    // location:string|undefined;
+    // startTime:string|undefined;
+    // endTime:string|undefined;
+    // capacity:number|undefined;
+
     
 }

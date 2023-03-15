@@ -3,4 +3,11 @@ export class Donation{
     donationentity:string='';
     donationfrequency:string='';
     donationamount:string='';
+
+    // donationID:number=0;
+    // amount:number=0;
+    // currency:number=0;
+    // provided_to:string='';
+    // recurring:boolean=false;
+    // personID:string='';
 }
